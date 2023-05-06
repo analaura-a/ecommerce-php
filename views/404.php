@@ -1,1 +1,1 @@
-<h1>Error 404</h1>
+<h1 class="text-center mt-5">¡Ups! Parece que la página que estás buscando no existe</h1>

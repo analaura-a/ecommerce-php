@@ -1,7 +1,7 @@
-<?PHP 
-    $seccion = $_GET['seccion'] ?? "home";
+<?PHP
+$seccion = $_GET['seccion'] ?? "home";
 
-    $whiteList = [
+$whiteList = [
     "home" => [
         "titulo" => "LILAC | Tienda online de ropa femenina"
     ],
@@ -10,20 +10,22 @@
     ],
     "catalogo" => [
         "titulo" => "Lilac | Catálogo"
-    ]];
-    
-    $vista = "404";
-    $titulo = "404";
+    ]
+];
 
-    if(array_key_exists($seccion, $whiteList)){
-        $vista = $seccion;
-        $titulo = $whiteList[$seccion]["titulo"];
-    }
+$vista = "404";
+$titulo = "404 | Página no encontrada";
+
+if (array_key_exists($seccion, $whiteList)) {
+    $vista = $seccion;
+    $titulo = $whiteList[$seccion]["titulo"];
+}
 
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,24 +43,25 @@
 <body class="body">
 
     <header>
-         <!--NAV que vamos a traer con require-->
+        <!--NAV que vamos a traer con require-->
         <?php require_once "includes/nav.php" ?>
     </header>
 
     <main class="container">
         <!--Contenido principal que vamos a traer con require-->
         <?PHP
-            file_exists("views/$vista.php") 
-                ?  require "views/$vista.php"
-                :  require "views/404.php"
-        ?> 
+        file_exists("views/$vista.php")
+            ?  require "views/$vista.php"
+            :  require "views/404.php"
+        ?>
     </main>
 
     <!--FOOTER que vamos a traer con require-->
     <?php require_once "includes/footer.php" ?>
-    
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <!--JS Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
 </body>
-   
+
 </html>

@@ -1,109 +1,137 @@
 /*RESET*/
-body{
+body {
     font-family: 'Manrope', sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     background: rgb(254, 253, 255);
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
     display: block;
     max-width: 100%;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     overflow-wrap: break-word;
     margin: 0;
 }
 
 /*GENERAL*/
-:root{
+:root {
     --manrope-300: 300;
     --manrope-400: 400;
     --manrope-500: 500;
     --manrope-600: 600;
     --manrope-700: 700;
     --manrope-800: 800;
+    --lilac: hsl(300, 32%, 69%);
 
 }
 
 /*NAVBAR*/
-.navbar-brand{
+.max-w {
+    max-width: 1300px!important;
+}
+
+.navbar-brand {
     font-size: 1.5rem;
     font-weight: var(--manrope-700);
     text-transform: uppercase;
+    color: var(--lilac);
 }
 
-.nav-item{
+.nav-item {
     font-weight: var(--manrope-500);
 }
 
 /*Páginas:*/
 /*INICIO*/
-.container{
+.container {
     max-width: 1200px;
-    margin: 0 auto; 
+    margin: 0 auto;
+    min-height: 70vh !important;
 }
 
 @media (min-width: 992px) {
-    .container{
+    .container {
         padding: 0 2rem 0 2rem;
+        min-height: 70vh !important;
     }
 }
 
-.h1{
+.h1 {
     font-size: clamp(1.5rem, 4vw + 1rem, 2.5rem);
     font-weight: var(--manrope-700);
     line-height: 1.2;
 }
 
 /*ABOUT*/
-.about{
+.about {
     padding: 0 1rem;
     margin: 2rem 0 0 0;
 }
-.about > div{
+
+.about>div {
     max-width: 60ch;
 }
 
 @media (min-width: 992px) {
-    .imagen{
+    .imagen {
         width: 570px;
     }
 }
 
 /*CATÁLOGO*/
-.h1-catalogo{
+.h1-catalogo {
     text-align: left;
 }
 
-.fw-subtitulo{
+.fw-subtitulo {
     font-weight: var(--manrope-600);
+    color: var(--lilac) !important;
 }
 
-.h2-card{
+.h2-card {
     font-weight: var(--manrope-700);
 }
 
-.img-producto{
+.lilac-text {
+    color: var(--lilac);
+}
+
+.img-producto {
     object-fit: cover;
     height: 100%;
 }
 
- /*.contenedor-productos{
+.btn:hover {
+    color: #fafafa;
+}
+
+/*.contenedor-productos{
    display: grid;
 }*/
 
-@media (max-width: 992px){
-    .h1-catalogo{
+@media (max-width: 992px) {
+    .h1-catalogo {
         text-align: center;
     }
-    
-    .contenedor-productos > div > div{
+
+    .contenedor-productos>div>div {
         margin: 0 auto;
     }
 
-    .contenedor-productos .card{
+    .contenedor-productos .card {
         margin: 0 auto;
     }
 }

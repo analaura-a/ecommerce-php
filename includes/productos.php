@@ -1,4 +1,7 @@
 <?PHP
+
+/*AGREGARLE FECHA A LOS PRODUCTOS
+AGREGAR 15 O MAS PRODUCTOS*/
 $productos = [
     'trending' => [
 
@@ -122,4 +125,3 @@ $productos = [
       
     ],
 ];
-?>

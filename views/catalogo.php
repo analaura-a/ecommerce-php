@@ -1,13 +1,9 @@
 <?php
-// require_once "includes/productos.php";
 
-require_once "funciones/productos.php";
-$productos = catalogo_completo();
+require_once "functions/productos.php";
 
 $categoriaSeleccionada = isset($_GET['categoria']) ? $_GET['categoria'] : false;
 
-// $categoria = $productos[$categoriaSeleccionada] ?? [];
-// echo count($categoria);
 $categoria = catalogo_por_categoria($categoriaSeleccionada);
 
 //Función para recortar la longitud de las descripciones 
@@ -46,8 +42,8 @@ function recortar_parrafo($parrafo, $cantidad){
                                     <p class="card-text"><?= recortar_parrafo($prenda['descripcion'], 18); ?></p>
                                     <p class="card-text"><small class="text-body-secondary">Talle: <?= $prenda['talle'] ?></small></p>
                                     <p class="card-text"><small class="text-body-secondary">Color: <?= $prenda['color'] ?></small></p>
-                                    <div class="fs-3 mb-3 fw-bold text-left lilac-text">$<?= $prenda['precio'] ?></div>
-                                    <a href="#" class="btn bg-black w-100 fw-bold lilac-text py-2">COMPRAR</a>
+                                    <div class="fs-3 mb-3 fw-bold text-left lilac-text">$<?= number_format($prenda['precio'], 2, ",", "."); ?></div>
+                                    <a href="index.php?seccion=product-detail&id=<?= $prenda['id'] ?>" class="btn bg-black w-100 fw-bold lilac-text py-2">VER MÁS</a>
                                 </div>
                             </div>
                         </div>

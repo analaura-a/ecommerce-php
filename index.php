@@ -10,7 +10,10 @@ $whiteList = [
     ],
     "catalogo" => [
         "titulo" => "Lilac | Catálogo"
-    ]
+    ],
+    "product-detail" => [
+        "titulo" => "Detalle del producto"
+    ],
 ];
 
 $vista = "404";

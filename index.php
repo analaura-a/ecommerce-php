@@ -6,13 +6,16 @@ $whiteList = [
         "titulo" => "LILAC | Tienda online de ropa femenina"
     ],
     "about" => [
-        "titulo" => "About Lilac"
+        "titulo" => "Acerca de Lilac"
+    ],
+    "catalogo-completo" => [
+        "titulo" => "Catálogo | Todas las prendas"
     ],
     "catalogo" => [
-        "titulo" => "Lilac | Catálogo"
+        "titulo" => "Catálogo | Categorías"
     ],
     "product-detail" => [
-        "titulo" => "Detalle del producto"
+        "titulo" => "Detalle de la prenda"
     ],
 ];
 

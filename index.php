@@ -48,6 +48,8 @@ if (array_key_exists($seccion, $whiteList)) {
 
 <body class="body">
 
+    <p class="publicidad text-center py-1 fw-bold fs-7">3 cuotas sin interés</p>
+
     <header>
         <!--NAV que vamos a traer con require-->
         <?php require_once "includes/nav.php" ?>

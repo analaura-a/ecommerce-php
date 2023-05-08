@@ -10,7 +10,7 @@ $categoria = $catalogo->catalogo_por_categoria($categoriaSeleccionada);
 
 ?>
 
-<h1 class="h1 h1-catalogo my-5"><?= ucwords(str_replace("-", " ", $categoriaSeleccionada)); ?></h1>
+<h1 class="h1 h1-catalogo my-5"><?= ucwords(str_replace("-", " ", $categoriaSeleccionada)) ?> &#128293;</h1>
 
 <div class="contenedor-productos container-fluid">
 
@@ -28,7 +28,7 @@ $categoria = $catalogo->catalogo_por_categoria($categoriaSeleccionada);
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <p class="fs-6 m-0 fw-subtitulo text-primary"><?= $prenda->prenda; ?></p>
-                                    <h5 class="card-title h2-card"><?= $prenda->nombre; ?></h5>
+                                    <h2 class="card-title h2-card fs-4"><?= $prenda->nombre; ?></h2>
                                     <p class="card-text"><?= $prenda->recortar_parrafo(18); ?></p>
                                     <p class="card-text"><small class="text-body-secondary">Talle: <?= $prenda->talle ?></small></p>
                                     <p class="card-text"><small class="text-body-secondary">Color: <?= $prenda->color ?></small></p>

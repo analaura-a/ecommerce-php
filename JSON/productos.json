@@ -9,7 +9,7 @@
     "descripcion": "Las polleras con cruce asim\u00e9trico son una tendencia que no puede faltar en tu placard. La pollera Margo es de corderoy de algod\u00f3n. Tiene cinco bolsillos y cuenta con cuatro botones met\u00e1licos. \u00a1Pod\u00e9s agregarle un cintur\u00f3n!",
     "imagen": "img/productos/pollera-margo.webp",
     "precio": 19590,
-    "publicacion": "Marzo 2023"
+    "publicacion": "Marzo, 2023"
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@
     "descripcion": "La remera Flora es de jersey de algod\u00f3n con elastano. Tiene mangas largas y frente cruzado, con escote. \u00a1Nos encantan sus tiras para ajustar! S\u00faper cancheras y a la moda.",
     "imagen": "img/productos/remera-flora.webp",
     "precio": 10300,
-    "publicacion": "Febrero 2023"
+    "publicacion": "Febrero, 2023"
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@
     "descripcion": "El chaleco Arena es de gabardina de algod\u00f3n. Es tipo sastrero, una tendencia que no puede faltarte esta temporada. Cuenta con cuatro botones, para ajustar como vos m\u00e1s quieras.",
     "imagen": "img/productos/chaleco-arena.webp",
     "precio": 15450,
-    "publicacion": "Febrero 2023"
+    "publicacion": "Febrero, 2023"
   },
   {
     "id": 4,
@@ -45,7 +45,7 @@
     "descripcion": "La musculosa Danna es de morley de algod\u00f3n con elastano. Tiene breteles anchos. Este b\u00e1sico es un must para combinar con cualquier denim, \u00a1para ser la teen m\u00e1s canchera!",
     "imagen": "img/productos/musculosa-danna.webp",
     "precio": 6180,
-    "publicacion": "Enero 2023"
+    "publicacion": "Enero, 2023"
   },
   {
     "id": 5,
@@ -57,7 +57,7 @@
     "descripcion": "La campera Boston es una opci\u00f3n colorida y s\u00faper abrigada para los d\u00edas m\u00e1s fr\u00edos. Es de poliamida, con efecto engomado, forrada en tafeta con relleno de vell\u00f3n siliconado. Tiene el cuello alto y con botones, para mantenerte protegida del viento.",
     "imagen": "img/productos/campera-boston.webp",
     "precio": 39000,
-    "publicacion": "Junio 2023"
+    "publicacion": "Junio, 2023"
   },
   {
     "id": 6,
@@ -69,6 +69,222 @@
     "descripcion": "La campera Academy combina tendencias, funcionalidad y abrigo. Es de microfibra de poli\u00e9ster, forrada en tafeta y rellena con vell\u00f3n siliconado. Tiene capucha, cierre, cordones de sat\u00e9n y bolsillos. \u00a1S\u00ed, lo tiene todo!",
     "imagen": "img/productos/campera-academy.webp",
     "precio": 41150,
-    "publicacion": "Junio 2023"
+    "publicacion": "Junio, 2023"
+  },
+  {
+    "id": 7,
+    "categoria": "invierno-2023",
+    "nombre": "CAMPERA SKYLER",
+    "prenda": "Campera",
+    "color": "Lila",
+    "talle": 38,
+    "descripcion": "La campera Skyler es una opci\u00f3n s\u00faper calentita para los d\u00edas m\u00e1s fr\u00edos. Es de poliamida, con efecto engomado, forrada en tafeta con relleno de vell\u00f3n siliconado. \u00a1Su color y estilo representan totalmente a Lilac!",
+    "imagen": "img/productos/campera-skyler.webp",
+    "precio": 27230,
+    "publicacion": "Agosto, 2023"
+  },
+  {
+    "id": 8,
+    "categoria": "invierno-2023",
+    "nombre": "REMERA DUA",
+    "prenda": "Remera",
+    "color": "Negro",
+    "talle": 32,
+    "descripcion": "La remera Dua es de jersey de algod\u00f3n con elastano. Tiene mangas largas con abertura para dedo pulgar, y cuello redondo. Cuenta con un aplique de strass en forma de mariposa en delantero, que la hace s\u00faper canchera y le da toda la onda. Est\u00e1 disponible en color negro, con costuras hacia afuera a contratono en blanco. \u00a1Te invitamos a que te animes a usarla en tus looks invernales!",
+    "imagen": "img/productos/remera-dua.webp",
+    "precio": 8160,
+    "publicacion": "Agosto, 2023"
+  },
+  {
+    "id": 9,
+    "categoria": "invierno-2023",
+    "nombre": "BUZO LULI",
+    "prenda": "Buzo",
+    "color": "Beige",
+    "talle": 34,
+    "descripcion": "El buzo Luli es de corderoy de punto, de algod\u00f3n con poli\u00e9ster. Tiene capucha forrada y cierre. Adem\u00e1s, cuenta con el\u00e1sticos en pu\u00f1os y cintura. Es una opci\u00f3n abrigada y c\u00f3moda para esta temporada de invierno. Para las amantes de los tonos neutro, \u00a1est\u00e1 disponible en beige!",
+    "imagen": "img/productos/buzo-luli.webp",
+    "precio": 12530,
+    "publicacion": "Julio, 2023"
+  },
+  {
+    "id": 10,
+    "categoria": "invierno-2023",
+    "nombre": "SWEATER MATCH",
+    "prenda": "Sweater",
+    "color": "Verde",
+    "talle": 3,
+    "descripcion": "\u00bfTe gusta el estilo polo? Este sweater es para vos. El sweater polo Match es tejido, con hilado mezcla de algod\u00f3n y acr\u00edlico. Tiene cuello tipo camionero, y cierre met\u00e1lico. Est\u00e1 disponible en color verde oscuro. \u00a1Es el combo perfecto entre abrigo y color!",
+    "imagen": "img/productos/sweater-match.webp",
+    "precio": 13330,
+    "publicacion": "Junio, 2023"
+  },
+  {
+    "id": 11,
+    "categoria": "invierno-2023",
+    "nombre": "BUZO LILAC",
+    "prenda": "Buzo",
+    "color": "Lila",
+    "talle": 36,
+    "descripcion": "El buzo Lilac es de frisa de algod\u00f3n con poli\u00e9ster. Tiene el cuello redondo, con recortes. El frente es m\u00e1s corto que la espalda. Est\u00e1 disponible en color lila, con una estampa en la espalda. \u00a1Su color y estilo representan totalmente a Lilac!",
+    "imagen": "img/productos/buzo-lilac.webp",
+    "precio": 11900,
+    "publicacion": "Junio, 2023"
+  },
+  {
+    "id": 12,
+    "categoria": "invierno-2023",
+    "nombre": "BUZO COMFORT",
+    "prenda": "Buzo",
+    "color": "Marr\u00f3n",
+    "talle": 42,
+    "descripcion": "Una opci\u00f3n suelta, canchera y c\u00f3moda para tu look. El buzo Comfort es de frisa de algod\u00f3n con poli\u00e9ster. Tiene cuello redondo, con pu\u00f1os y cintura en ribb. Es de color marr\u00f3n, con estampa en el frente y la espalda. Para usarlo en los d\u00edas m\u00e1s confortables.",
+    "imagen": "img/productos/buzo-comfort.webp",
+    "precio": 14150,
+    "publicacion": "Agosto, 2023"
+  },
+  {
+    "id": 13,
+    "categoria": "trending",
+    "nombre": "CHALECO NUUK",
+    "prenda": "Chaleco",
+    "color": "Celeste",
+    "talle": 1,
+    "descripcion": "Elev\u00e1 tu outfit con nuestro chaleco Nuuk. Est\u00e1 hecho de microfibra de poli\u00e9ster, forrado en tafeta y relleno con guata siliconada. Es matelaseado, con cuello alto y tira cierre con frase. Lleva el\u00e1stico en la cintura. Es un abrigo ligero, c\u00f3modo y creativo para este invierno. \u00a1Est\u00e1 disponible en color celeste!",
+    "imagen": "img/productos/chaleco-nuuk.webp",
+    "precio": 24560,
+    "publicacion": "Marzo, 2023"
+  },
+  {
+    "id": 17,
+    "categoria": "trending",
+    "nombre": "CAMISA MARIA",
+    "prenda": "Camisa",
+    "color": "Lila",
+    "talle": 1,
+    "descripcion": "Las camisas crop son una tendencia must para esta temporada. La camisa Mar\u00eda no puede faltarte. Es de popl\u00edn de algod\u00f3n. Tiene mangas largas. Lleva bolsillo aplicado en delantero y cartera de botones. Est\u00e1 disponible en color lila.",
+    "imagen": "img/productos/camisa-maria.webp",
+    "precio": 16390,
+    "publicacion": "Mayo, 2023"
+  },
+  {
+    "id": 18,
+    "categoria": "trending",
+    "nombre": "POLLERA GABI",
+    "prenda": "Pollera",
+    "color": "Beige",
+    "talle": 40,
+    "descripcion": "La pollera Gabi es de gabardina de algod\u00f3n. Tiene botones met\u00e1licos y pespuntes a contratono. Por su estilo tableado, es la protagonista ideal para un look trendy y canchero. \u00a1Es una tendencia must para esta temporada!",
+    "imagen": "img/productos/pollera-gabi.webp",
+    "precio": 14150,
+    "publicacion": "Enero, 2023"
+  },
+  {
+    "id": 16,
+    "categoria": "trending",
+    "nombre": "REMERA SERENITY",
+    "prenda": "Remera",
+    "color": "Beige",
+    "talle": 2,
+    "descripcion": "El remer\u00f3n Serenity es de jersey de algod\u00f3n. Tiene cuello redondo y mangas cortas. Est\u00e1 disponible en color beige, \u00a1con una estampa a contratono que es una bomba! La estampa est\u00e1 ubicada en frente y espalda.",
+    "imagen": "img/productos/remera-serenity.webp",
+    "precio": 7440,
+    "publicacion": "Abril, 2023"
+  },
+  {
+    "id": 14,
+    "categoria": "trending",
+    "nombre": "REMERA PARIS",
+    "prenda": "Remera",
+    "color": "Blanco",
+    "talle": 40,
+    "descripcion": "La remera Par\u00eds es una opci\u00f3n s\u00faper canchera y rockera para cualquier temporada. Es de jersey de algod\u00f3n con elastano. Tiene mangas largas, cuello redondo ancho y aberturas para el dedo pulgar. Cuenta con aplique de strass en delantero, que le da toda la onda. Est\u00e1 disponible en color blanco, con costuras a contratono. \u00a1Combinalo con una pollera y unos borcegos!",
+    "imagen": "img/productos/remera-paris.webp",
+    "precio": 8160,
+    "publicacion": "Septiembre, 2023"
+  },
+  {
+    "id": 15,
+    "categoria": "trending",
+    "nombre": "POLLERA COLUCCI",
+    "prenda": "Pollera",
+    "color": "Azul",
+    "talle": 38,
+    "descripcion": "La pollera Colucci es de denim de algod\u00f3n con elastano. Es estilo tableada, una de las tendencias principales de esta temporada. \u00a1Adem\u00e1s de s\u00faper c\u00f3moda y canchera! El tiro llega hasta la cintura.",
+    "imagen": "img/productos/pollera-colucci.webp",
+    "precio": 14150,
+    "publicacion": "Octubre, 2023"
+  },
+  {
+    "id": 19,
+    "categoria": "verano-2023",
+    "nombre": "REMERA ADDISON",
+    "prenda": "Remera",
+    "color": "Beige",
+    "talle": 32,
+    "descripcion": "La remera Addison es el comod\u00edn ideal, tanto para el d\u00eda como la noche. Es de jersey con elastano. Tiene recorte frontal, jaretas y tiras de ajuste. Est\u00e1 disponible en color beige. \u00a1Combina perfecto con denim!",
+    "imagen": "img/productos/remera-addison.webp",
+    "precio": 5630,
+    "publicacion": "Febrero, 2023"
+  },
+  {
+    "id": 20,
+    "categoria": "verano-2023",
+    "nombre": "REMERA MUNA",
+    "prenda": "Remera",
+    "color": "Lila",
+    "talle": 42,
+    "descripcion": "La remera Polo Muna es de ribb de algod\u00f3n. Es manga corta, y tiene cuello con chomba y botones a tono. Es una opci\u00f3n fresca y formal para cualquier temporada. \u00a1Est\u00e1 disponible en el mismo color que nuestra marca, lila!",
+    "imagen": "img/productos/remera-muna.webp",
+    "precio": 7440,
+    "publicacion": "Marzo, 2023"
+  },
+  {
+    "id": 21,
+    "categoria": "verano-2023",
+    "nombre": "JUMPER ALMA",
+    "prenda": "Jumper",
+    "color": "Marr\u00f3n",
+    "talle": 3,
+    "descripcion": "El jumper Alma es de gabardina de algod\u00f3n. Tiene breteles anchos y bolsillo en frente. Est\u00e1 disponible en color marr\u00f3n, con costuras a contratono. \u00a1Pod\u00e9s combinarlo con cualquiera de nuestras poleras! ",
+    "imagen": "img/productos/jumper-alma.webp",
+    "precio": 14150,
+    "publicacion": "Abril, 2023"
+  },
+  {
+    "id": 22,
+    "categoria": "verano-2023",
+    "nombre": "REMERA JACKIE",
+    "prenda": "Remera",
+    "color": "Blanco",
+    "talle": 1,
+    "descripcion": "El remer\u00f3n Jackie es de jersey de algod\u00f3n. Tiene mangas cortas y cuello redondo. Est\u00e1 disponible en color blanco, con estampa en delantero. \u00a1Llev\u00e1 las mejores remeras para esta temporada!",
+    "imagen": "img/productos/remera-jackie.webp",
+    "precio": 7440,
+    "publicacion": "Mayo, 2023"
+  },
+  {
+    "id": 23,
+    "categoria": "verano-2023",
+    "nombre": "REMERA INDIAN",
+    "prenda": "Remera",
+    "color": "Beige",
+    "talle": 2,
+    "descripcion": "El remer\u00f3n Indian es de jersey 100% algod\u00f3n. Es manga corta y oversized. El color es beige, con estampa. Su cuello es en ribb con material el\u00e1stico y resistente. \u00a1El remer\u00f3n m\u00e1s c\u00f3modo y canchero!",
+    "imagen": "img/productos/remera-indian.webp",
+    "precio": 6890,
+    "publicacion": "Junio, 2023"
+  },
+  {
+    "id": 24,
+    "categoria": "verano-2023",
+    "nombre": "VESTIDO EMMA",
+    "prenda": "Vestido",
+    "color": "Azul",
+    "talle": 42,
+    "descripcion": "\u00bfQuer\u00e9s un look canchero y arriesgado? \u00a1Este vestido es para vos! El vestido Emma es de denim de algod\u00f3n con elastano. Lleva lavado stone y matizado, para un estilo gastado. Tiene breteles finitos y cierre met\u00e1lico en el lateral.",
+    "imagen": "img/productos/vestido-emma.webp",
+    "precio": 14150,
+    "publicacion": "Enero, 2023"
   }
 ]

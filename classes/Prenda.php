@@ -2,8 +2,6 @@
 
 class Prenda
 {
-    //Constructor
-
     //Atributos
     public $id;
     public $categoria;

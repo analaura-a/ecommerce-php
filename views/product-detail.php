@@ -9,38 +9,35 @@ $prenda = $catalogo->catalogo_por_id($prendaSeleccionada);
 
 ?>
 
-<h1 class="h1 h1-catalogo my-5"><?= ucwords(str_replace("-", " ", $prendaSeleccionada)); ?></h1>
+<div class="product-container my-5">
 
-<div class="contenedor-productos container-fluid">
+    <?php if (isset($prenda)) { ?>
 
-    <div class="row">
-        <?php if (isset($prenda)) {?>
 
-                <div class="col-12 col-lg-6">
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="<?= $prenda->imagen ?>" class="card-img-top img-producto" alt="<?= $prenda->nombre; ?>">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <p class="fs-6 m-0 fw-subtitulo text-primary"><?= $prenda->prenda ?></p>
-                                    <h5 class="card-title h2-card"><?= $prenda->nombre; ?></h5>
-                                    <p class="card-text"><?= $prenda->descripcion; ?></p>
-                                    <p class="card-text"><small class="text-body-secondary">Talle: <?= $prenda->talle ?></small></p>
-                                    <p class="card-text"><small class="text-body-secondary">Color: <?= $prenda->color ?></small></p>
-                                    <div class="fs-3 mb-3 fw-bold text-left lilac-text">$<?= $prenda->precio_formateado(); ?></div>
-                                    <a href="#" class="btn bg-black w-100 fw-bold lilac-text py-2">COMPRAR</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-            <?PHP 
-        } else { ?>
-            <h2 class="text-center mt-3">El producto que estás buscando no existe.</h2>
-        <?PHP } ?>
-    </div>
+        <img src="<?= $prenda->imagen ?>" class="img-product rounded" alt="<?= $prenda->nombre; ?>">
+
+
+        <div class="product-info mt-3">
+            <p class="fs-6 m-0 fw-subtitulo fs-4"><?= $prenda->prenda; ?></p>
+            <h2 class="h1 text-start"><?= $prenda->nombre; ?></h2>
+            <p class="fs-6 mt-5 fw-bold fs-5">Descripción</p>
+            <p><?= $prenda->descripcion; ?></p>
+            <p class="text-secondary fs-7 mt-1"><?= $prenda->publicacion; ?></p>
+
+            <p class="mt-5"><span class="fw-bold">Color:</span> <?= $prenda->color; ?></p>
+            <p class="mt-1"><span class="fw-bold">Talle:</span> <?= $prenda->talle; ?></p>
+
+            <p class="mt-5 fw-bold fs-1"><span class="lilac-text">$ </span><?= $prenda->precio_formateado(); ?></p>
+            <button class="btn bg-black w-100 fw-bold lilac-text py-3 mt-5 rounded-3 mb-0 mx-auto d-block" style="max-width:500px">AGREGAR AL CARRITO</button>
+        </div>
+
+
+
+    <?PHP
+    } else { ?>
+        <h2 class="text-center mt-3">¡Ups! El producto que estás buscando no existe.</h2>
+        <a href="index.php?seccion=home" class="btn bg-black fw-bold lilac-text py-3 m-auto mt-5 rounded-pill" style="max-width:250px">VOLVER AL INICIO</a>
+    <?PHP } ?>
 
 </div>

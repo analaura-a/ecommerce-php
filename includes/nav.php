@@ -37,7 +37,7 @@
                     <a class="nav-link" href="#">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Datos de la alumna</a>
+                    <a class="nav-link" href="index.php?seccion=datos-alumna">Datos de la alumna</a>
                 </li>
             </ul>
             <span class="navbar-text">

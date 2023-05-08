@@ -17,6 +17,9 @@ $whiteList = [
     "product-detail" => [
         "titulo" => "Detalle de la prenda"
     ],
+    "datos-alumna" => [
+        "titulo" => "Datos de la alumna"
+    ]
 ];
 
 $vista = "404";

@@ -10,7 +10,7 @@
             <a href="index.php?seccion=catalogo-completo" class="nav-link px-2 text-body-secondary">Productos</a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-body-secondary">Contacto</a>
+            <a href="index.php?seccion=contacto" class="nav-link px-2 text-body-secondary">Contacto</a>
         </li>
     </ul>
     <p class="text-center text-body-secondary">© 2023 LILAC | Made with 💗 by Ana Laura Almirón</p>

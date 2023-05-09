@@ -14,8 +14,14 @@ $whiteList = [
     "catalogo" => [
         "titulo" => "Catálogo | Categorías"
     ],
+    "catalogo-prenda"=> [
+        "titulo" => "Catálogo | Prendas"
+    ],
     "product-detail" => [
         "titulo" => "Detalle de la prenda"
+    ],
+    "contacto" => [
+        "titulo" => "¡Contactate con nosotras!"
     ],
     "datos-alumna" => [
         "titulo" => "Datos de la alumna"
@@ -59,7 +65,7 @@ if (array_key_exists($seccion, $whiteList)) {
     </header>
 
     <main class="container">
-        <!--Contenido principal que vamos a traer con require-->
+        <!--Contenido principal dinámico-->
         <?PHP
         file_exists("views/$vista.php")
             ?  require "views/$vista.php"

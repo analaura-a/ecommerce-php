@@ -31,10 +31,44 @@
                         <li>
                             <a class="dropdown-item" href="index.php?seccion=catalogo&categoria=invierno-2023">Invierno '23</a>
                         </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="index.php?seccion=catalogo-prenda&categoria=Remera">Remeras</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="index.php?seccion=catalogo-prenda&categoria=Musculosa">Musculosas</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="index.php?seccion=catalogo-prenda&categoria=Camisa">Camisas</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="index.php?seccion=catalogo-prenda&categoria=Chaleco">Chalecos</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="index.php?seccion=catalogo-prenda&categoria=Campera">Camperas</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="index.php?seccion=catalogo-prenda&categoria=Buzo">Buzos</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="index.php?seccion=catalogo-prenda&categoria=Sweater">Sweaters</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="index.php?seccion=catalogo-prenda&categoria=Pollera">Polleras</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="index.php?seccion=catalogo-prenda&categoria=Vestido">Vestidos</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="index.php?seccion=catalogo-prenda&categoria=Jumper">Jumpers</a>
+                        </li>
+
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contacto</a>
+                    <a class="nav-link" href="index.php?seccion=contacto">Contacto</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?seccion=datos-alumna">Datos de la alumna</a>

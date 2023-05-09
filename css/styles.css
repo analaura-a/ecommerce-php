@@ -186,7 +186,6 @@ h6 {
     object-fit: cover;
 }
 
-
 /*CATÁLOGO*/
 .h1-catalogo {
     text-align: left;
@@ -232,7 +231,6 @@ h6 {
     }
 }
 
-
 /* DETAIL PAGE */
 .product-container {
     display: flex;
@@ -254,6 +252,15 @@ h6 {
 
 .fs-8 {
     font-size: 1.15rem;
+}
+
+.container-error {
+    display: flex;
+    flex-direction: column;
+}
+
+.letter-spacing-1 {
+    letter-spacing: 0.0625rem;
 }
 
 @media (min-width: 992px) {
@@ -307,4 +314,59 @@ h6 {
 
 .link-profile:hover {
     color: hsl(300, 30%, 61%);
+}
+
+/* CONTACTO */
+.container-contacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+}
+
+.contact-info {
+    width: 100%;
+    max-width: 100%;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 100%;
+}
+
+#formControlTextarea {
+    resize: none;
+}
+
+.form-control:focus,
+.form-check-input:focus {
+    border-color: var(--lilac);
+    box-shadow: 0 0 0 0.25rem hsl(300deg 43.18% 84.76% / 32%);
+}
+
+.form-check-input:checked {
+    background-color: var(--lilac);
+    border-color: var(--lilac);
+}
+
+.card-message-form{
+    background-color: hsl(210, 17%, 98%);
+    padding: 3.75rem 2.8rem;
+    border-radius: 16px;
+}
+
+@media (min-width: 992px) {
+    .container-contacto {
+        flex-direction: row;
+    }
+
+    .contact-info {
+        max-width: 45%;
+    }
+
+    .contact-form {
+        max-width: 40%;
+    }
+
 }

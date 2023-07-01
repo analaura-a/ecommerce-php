@@ -33,7 +33,7 @@ echo "</pre>";
                                     <a href="index.php?seccion=catalogo-prenda&categoria=<?= $prenda->getPrenda(); ?>" class="fs-6 m-0 fw-subtitulo text-primary link-profile"><?= $prenda->getPrenda(); ?></a>
                                     <h2 class="card-title h2-card fs-4"><?= $prenda->getNombre(); ?></h2>
                                     <p class="card-text"><?= $prenda->recortar_parrafo(18); ?></p>
-                                    <p class="card-text"><small class="text-body-secondary">Talle: <?= $prenda->getTalle_id() ?></small></p>
+                                    <p class="card-text"><small class="text-body-secondary">Talle: <?= $prenda->getTalle() ?></small></p>
                                     <p class="card-text"><small class="text-body-secondary">Color: <?= $prenda->getColor() ?></small></p>
                                     <p class="card-text"><small class="text-body-secondary">Marca: <?= $prenda->getMarca() ?></small></p>
                                     <div class="fs-3 mb-3 fw-bold text-left lilac-text">$<?= $prenda->precio_formateado(); ?></div>

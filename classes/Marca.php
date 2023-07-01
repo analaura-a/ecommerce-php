@@ -51,7 +51,7 @@ class Marca
     }
 
     /**
-     * Devuelve el catálogo de productos entero
+     * Obtener marca por ID
      */
     public function get_x_id(int $id)
     {

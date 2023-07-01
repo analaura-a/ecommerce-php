@@ -1,6 +1,7 @@
 <?php
 
 require_once "classes/Marca.php";
+require_once "classes/Talle.php";
 
 class Prenda
 {
@@ -67,11 +68,13 @@ class Prenda
     }
 
     /**
-     * Get the value of talle_id
+     * Getter del talle
      */
-    public function getTalle_id()
+    public function getTalle()
     {
-        return $this->talle_id;
+        $talle = (new Talle())->get_x_id($this->talle_id);
+        $valor_talle = $talle->getTalle();
+        return $valor_talle;
     }
 
     /**
@@ -99,7 +102,7 @@ class Prenda
     }
 
     /**
-     * Get the value of marca_id
+     * Getter de la marca
      */
     public function getMarca()
     {

@@ -23,7 +23,7 @@ $prenda = $catalogo->catalogo_por_id($prendaSeleccionada);
             <p class="text-secondary fs-7 mt-1"><?= $prenda->getPublicacion(); ?></p>
 
             <p class="mt-5"><span class="fw-bold">Color:</span> <?= $prenda->getColor(); ?></p>
-            <p class="mt-1"><span class="fw-bold">Talle:</span> <?= $prenda->getTalle_id(); ?></p>
+            <p class="mt-1"><span class="fw-bold">Talle:</span> <?= $prenda->getTalle(); ?></p>
 
             <p class="mt-5 fw-bold fs-1"><span class="lilac-text">$ </span><?= $prenda->precio_formateado(); ?></p>
             <button class="btn bg-black w-100 fw-bold lilac-text py-3 mt-5 rounded-3 mb-0 mx-auto d-block letter-spacing-1" style="max-width:500px">AGREGAR AL CARRITO</button>

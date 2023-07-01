@@ -77,19 +77,19 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" href="index.php?seccion=catalogo-marca&categoria=topshop">TopShop</a>
+                            <a class="dropdown-item" href="index.php?seccion=catalogo-marca&categoria=1">TopShop</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="index.php?seccion=catalogo-marca&categoria=rapsodia">Rapsodia</a>
+                            <a class="dropdown-item" href="index.php?seccion=catalogo-marca&categoria=2">Rapsodia</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="index.php?seccion=catalogo-marca&categoria=mango">Mango</a>
+                            <a class="dropdown-item" href="index.php?seccion=catalogo-marca&categoria=3">Mango</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="index.php?seccion=catalogo-marca&categoria=forever21">Forever21</a>
+                            <a class="dropdown-item" href="index.php?seccion=catalogo-marca&categoria=4">Forever21</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="index.php?sseccion=catalogo-marca&categoria=cuestablanca">Cuesta Blanca</a>
+                            <a class="dropdown-item" href="index.php?seccion=catalogo-marca&categoria=5">Cuesta Blanca</a>
                         </li>
                     </ul>
                 </li>

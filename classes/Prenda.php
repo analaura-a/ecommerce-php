@@ -139,12 +139,13 @@ class Prenda
     {
         $catalogo_filtrado = [];
 
-        $catalogo = $this->catalogo_completo();
-        foreach ($catalogo as $prenda) {
-            if ($prenda->getCategoria() == $nombre_categoria) {
-                $catalogo_filtrado[] = $prenda;
-            }
-        }
+        $query = "SELECT * FROM prendas WHERE categoria = '$nombre_categoria'";
+        $conexion = (new Conexion())->getConexion();
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
+        $PDOStatement->execute();
+
+        $catalogo_filtrado = $PDOStatement->fetchAll();
 
         return $catalogo_filtrado;
     }
@@ -157,31 +158,54 @@ class Prenda
     {
         $catalogo_filtrado = [];
 
-        $catalogo = $this->catalogo_completo();
-        foreach ($catalogo as $prenda) {
-            if ($prenda->getPrenda() == $nombre_prenda) {
-                $catalogo_filtrado[] = $prenda;
-            }
-        }
+        $query = "SELECT * FROM prendas WHERE prenda = '$nombre_prenda'";
+        $conexion = (new Conexion())->getConexion();
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
+        $PDOStatement->execute();
+
+        $catalogo_filtrado = $PDOStatement->fetchAll();
 
         return $catalogo_filtrado;
     }
 
-    // /**
-    //  * Devuelve el detalle de una prenda en particular
-    //  * @param int $id id del producto en particular
-    //  */
-    // public function catalogo_por_id(int $id)
-    // {
-    //     $catalogo = $this->catalogo_completo();
 
-    //     foreach ($catalogo as $prenda) {
-    //         if ($prenda->id == $id) {
-    //             return $prenda;
-    //         }
-    //     }
-    //     return null;
-    // }
+    /**
+     * Devuelve el catálogo de un tipo de marca en particular
+     * @param int $nombre_prenda id de la marca a filtrar
+     */
+    public function catalogo_por_marca(int $id): array
+    {
+        $catalogo_filtrado = [];
+
+        $query = "SELECT * FROM prendas WHERE marca_id = $id";
+        $conexion = (new Conexion())->getConexion();
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
+        $PDOStatement->execute();
+
+        $catalogo_filtrado = $PDOStatement->fetchAll();
+
+
+        return $catalogo_filtrado;
+    }
+
+    /**
+     * Devuelve el detalle de una prenda en particular
+     * @param int $id id del producto en particular
+     */
+    public function catalogo_por_id(int $id)
+    {
+   
+        $query = "SELECT * FROM prendas WHERE id = $id";
+        $conexion = (new Conexion())->getConexion();
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
+        $PDOStatement->execute();
+
+        $prendaSeleccionada = $PDOStatement->fetch();
+        return $prendaSeleccionada;
+    }
 
     /**
      * Devuelve el precio de la prenda formateado como dinero

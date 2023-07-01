@@ -2,11 +2,11 @@
 
 require_once "classes/Prenda.php";
 
-$categoriaSeleccionada = isset($_GET['categoria']) ? $_GET['categoria'] : false;
+$marcaSeleccionada = isset($_GET['categoria']) ? $_GET['categoria'] : false;
 
 $catalogo = new Prenda();
 
-$categoria = $catalogo->catalogo_por_categoria($categoriaSeleccionada);
+$categoria = $catalogo->catalogo_por_prenda($marcaSeleccionada);
 
 echo "<pre>";
 print_r($categoria);
@@ -14,12 +14,12 @@ echo "</pre>";
 
 ?>
 
-<h1 class="h1 h1-catalogo my-5"><?= ucwords(str_replace("-", " ", $categoriaSeleccionada)) ?> &#128293;</h1>
+<h1 class="h1 h1-catalogo my-5"><?= ucwords(str_replace("-", " ", $marcaSeleccionada)); ?> &#11088;</h1>
 
 <div class="contenedor-productos container-fluid">
 
     <div class="row">
-        <?php if (count($categoria)) { 
+        <?php if (count($categoria)) {
 
             foreach ($categoria as $prenda) { ?>
 
@@ -46,7 +46,7 @@ echo "</pre>";
 
             <?PHP }
         } else { ?>
-            <h2 class="text-center mt-3">No hay prendas disponibles para esa categoría.</h2>
+            <h2 class="text-center mt-3">No hay prendas disponibles para esa marca.</h2>
         <?PHP } ?>
     </div>
 

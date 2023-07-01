@@ -1,4 +1,34 @@
 <?PHP
+
+
+
+// require_once "classes/Marca.php";
+
+
+// try {
+//     // $conexion = new PDO(DB_DSN, DB_USER, DB_PASS);
+//     $conexion = (new Conexion())->getConexion();
+// } catch (Exception $e) {
+//     //throw $th;
+//     // echo "<pre>";
+//     // print_r($e);
+//     // echo "</pre>";
+//     die("Error al iniciar, intente nuevamente mas tarde");
+// }
+
+// $query = "SELECT * FROM marca";
+// $PDOStatement = $conexion->prepare($query);
+// $PDOStatement->execute();
+// $PDOStatement->setFetchMode(PDO::FETCH_CLASS, "Marca");
+// $datos = $PDOStatement->fetchAll();
+// echo "<pre>";
+// print_r($datos);
+// echo "</pre>";
+
+
+
+require_once "classes/Conexion.php";
+
 $seccion = $_GET['seccion'] ?? "home";
 
 $whiteList = [
@@ -14,8 +44,11 @@ $whiteList = [
     "catalogo" => [
         "titulo" => "Catálogo | Categorías"
     ],
-    "catalogo-prenda"=> [
+    "catalogo-prenda" => [
         "titulo" => "Catálogo | Prendas"
+    ],
+    "catalogo-marca" => [
+        "titulo" => "Catálogo | Marcas"
     ],
     "product-detail" => [
         "titulo" => "Detalle de la prenda"

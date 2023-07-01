@@ -3,18 +3,113 @@
 class Prenda
 {
     //Atributos
-    public $id;
-    public $categoria;
-    public $nombre;
-    public $prenda;
-    public $color;
-    public $talle;
-    public $descripcion;
-    public $imagen;
-    public $precio;
-    public $publicacion;
+    protected $id;
+    protected $nombre;
+    protected $categoria;
+    protected $prenda;
+    protected $precio;
+    protected $color;
+    protected $talle_id;
+    protected $descripcion;
+    protected $imagen;
+    protected $publicacion;
+    protected $marca_id;
 
     //Métodos
+     /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Get the value of nombre
+     */ 
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Get the value of categoria
+     */ 
+    public function getCategoria()
+    {
+        return $this->categoria;
+    }
+
+    /**
+     * Get the value of prenda
+     */ 
+    public function getPrenda()
+    {
+        return $this->prenda;
+    }
+
+    /**
+     * Get the value of precio
+     */ 
+    public function getPrecio()
+    {
+        return $this->precio;
+    }
+
+    /**
+     * Get the value of color
+     */ 
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * Get the value of talle_id
+     */ 
+    public function getTalle_id()
+    {
+        return $this->talle_id;
+    }
+
+    /**
+     * Get the value of descripcion
+     */ 
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+
+    /**
+     * Get the value of imagen
+     */ 
+    public function getImagen()
+    {
+        return $this->imagen;
+    }
+
+    /**
+     * Get the value of publicacion
+     */ 
+    public function getPublicacion()
+    {
+        return $this->publicacion;
+    }
+
+    /**
+     * Get the value of marca_id
+     */ 
+    public function getMarca_id()
+    {
+        return $this->marca_id;
+    }
+
+
+
+    
+
+
+
     /**
      * Devuelve el catálogo de productos entero
      */
@@ -22,24 +117,16 @@ class Prenda
     {
         $catalogo = [];
 
-        $datosJSON = file_get_contents(("JSON/productos.json"));
-        $datosArray = json_decode($datosJSON);
+        $query = "SELECT * FROM prendas";
+        $conexion = (new Conexion())->getConexion();
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
+        $PDOStatement->execute();
 
-        foreach ($datosArray as $value) {
-            $prenda = new self();
-            $prenda->id = $value->id;
-            $prenda->categoria = $value->categoria;
-            $prenda->nombre = $value->nombre;
-            $prenda->prenda = $value->prenda;
-            $prenda->color = $value->color;
-            $prenda->talle = $value->talle;
-            $prenda->descripcion = $value->descripcion;
-            $prenda->imagen = $value->imagen;
-            $prenda->precio = $value->precio;
-            $prenda->publicacion = $value->publicacion;
-
-            $catalogo[] = $prenda;
-        }
+        $catalogo = $PDOStatement->fetchAll();
+        // echo "<pre>";
+        // print_r($catalogo);
+        // echo "</pre>";
 
         return $catalogo;
     }
@@ -54,7 +141,7 @@ class Prenda
 
         $catalogo = $this->catalogo_completo();
         foreach ($catalogo as $prenda) {
-            if ($prenda->categoria == $nombre_categoria) {
+            if ($prenda->getCategoria() == $nombre_categoria) {
                 $catalogo_filtrado[] = $prenda;
             }
         }
@@ -72,7 +159,7 @@ class Prenda
 
         $catalogo = $this->catalogo_completo();
         foreach ($catalogo as $prenda) {
-            if ($prenda->prenda == $nombre_prenda) {
+            if ($prenda->getPrenda() == $nombre_prenda) {
                 $catalogo_filtrado[] = $prenda;
             }
         }
@@ -80,28 +167,28 @@ class Prenda
         return $catalogo_filtrado;
     }
 
-    /**
-     * Devuelve el catálogo de una prenda en particular
-     * @param int $id id del producto en particular
-     */
-    public function catalogo_por_id(int $id)
-    {
-        $catalogo = $this->catalogo_completo();
+    // /**
+    //  * Devuelve el detalle de una prenda en particular
+    //  * @param int $id id del producto en particular
+    //  */
+    // public function catalogo_por_id(int $id)
+    // {
+    //     $catalogo = $this->catalogo_completo();
 
-        foreach ($catalogo as $prenda) {
-            if ($prenda->id == $id) {
-                return $prenda;
-            }
-        }
-        return null;
-    }
+    //     foreach ($catalogo as $prenda) {
+    //         if ($prenda->id == $id) {
+    //             return $prenda;
+    //         }
+    //     }
+    //     return null;
+    // }
 
     /**
      * Devuelve el precio de la prenda formateado como dinero
      */
     public function precio_formateado(): string
     {
-        return number_format($this->precio, 2, ",", ".");
+        return number_format($this->getPrecio(), 2, ",", ".");
     }
 
     /**
@@ -110,7 +197,7 @@ class Prenda
      */
     public function recortar_parrafo(int $cantidad = 18): string
     {
-        $parrafo = $this->descripcion;
+        $parrafo = $this->getDescripcion();
         $resultado = "";
 
         $array = explode(" ", $parrafo);
@@ -123,4 +210,6 @@ class Prenda
 
         return $resultado;
     }
+
+   
 }

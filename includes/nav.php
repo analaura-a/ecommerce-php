@@ -67,6 +67,35 @@
 
                     </ul>
                 </li>
+
+
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Marcas
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="index.php?seccion=catalogo-marca&categoria=topshop">TopShop</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="index.php?seccion=catalogo-marca&categoria=rapsodia">Rapsodia</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="index.php?seccion=catalogo-marca&categoria=mango">Mango</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="index.php?seccion=catalogo-marca&categoria=forever21">Forever21</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="index.php?sseccion=catalogo-marca&categoria=cuestablanca">Cuesta Blanca</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?seccion=contacto">Contacto</a>
                 </li>

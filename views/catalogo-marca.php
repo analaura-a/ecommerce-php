@@ -3,9 +3,9 @@
 require_once "classes/Prenda.php";
 
 $marcaSeleccionada = isset($_GET['categoria']) ? $_GET['categoria'] : false;
+$marca = (new Marca())->get_x_id($marcaSeleccionada);
 
 $catalogo = new Prenda();
-
 $categoria = $catalogo->catalogo_por_marca($marcaSeleccionada);
 
 echo "<pre>";
@@ -14,7 +14,7 @@ echo "</pre>";
 
 ?>
 
-<h1 class="h1 h1-catalogo my-5"><?= ucwords(str_replace("-", " ", $marcaSeleccionada)); ?> &#128171;</h1>
+<h1 class="h1 h1-catalogo my-5"><?= $marca->getNombre(); ?> &#128171;</h1>
 
 <div class="contenedor-productos container-fluid">
 

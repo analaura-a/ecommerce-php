@@ -1,5 +1,7 @@
 <?php
 
+require_once "classes/Marca.php";
+
 class Prenda
 {
     //Atributos
@@ -16,9 +18,9 @@ class Prenda
     protected $marca_id;
 
     //Métodos
-     /**
+    /**
      * Get the value of id
-     */ 
+     */
     public function getId()
     {
         return $this->id;
@@ -26,7 +28,7 @@ class Prenda
 
     /**
      * Get the value of nombre
-     */ 
+     */
     public function getNombre()
     {
         return $this->nombre;
@@ -34,7 +36,7 @@ class Prenda
 
     /**
      * Get the value of categoria
-     */ 
+     */
     public function getCategoria()
     {
         return $this->categoria;
@@ -42,7 +44,7 @@ class Prenda
 
     /**
      * Get the value of prenda
-     */ 
+     */
     public function getPrenda()
     {
         return $this->prenda;
@@ -50,7 +52,7 @@ class Prenda
 
     /**
      * Get the value of precio
-     */ 
+     */
     public function getPrecio()
     {
         return $this->precio;
@@ -58,7 +60,7 @@ class Prenda
 
     /**
      * Get the value of color
-     */ 
+     */
     public function getColor()
     {
         return $this->color;
@@ -66,7 +68,7 @@ class Prenda
 
     /**
      * Get the value of talle_id
-     */ 
+     */
     public function getTalle_id()
     {
         return $this->talle_id;
@@ -74,7 +76,7 @@ class Prenda
 
     /**
      * Get the value of descripcion
-     */ 
+     */
     public function getDescripcion()
     {
         return $this->descripcion;
@@ -82,7 +84,7 @@ class Prenda
 
     /**
      * Get the value of imagen
-     */ 
+     */
     public function getImagen()
     {
         return $this->imagen;
@@ -90,7 +92,7 @@ class Prenda
 
     /**
      * Get the value of publicacion
-     */ 
+     */
     public function getPublicacion()
     {
         return $this->publicacion;
@@ -98,17 +100,13 @@ class Prenda
 
     /**
      * Get the value of marca_id
-     */ 
-    public function getMarca_id()
+     */
+    public function getMarca()
     {
-        return $this->marca_id;
+        $marca = (new Marca())->get_x_id($this->marca_id);
+        $nombre_marca = $marca->getNombre();
+        return $nombre_marca;
     }
-
-
-
-    
-
-
 
     /**
      * Devuelve el catálogo de productos entero
@@ -124,9 +122,6 @@ class Prenda
         $PDOStatement->execute();
 
         $catalogo = $PDOStatement->fetchAll();
-        // echo "<pre>";
-        // print_r($catalogo);
-        // echo "</pre>";
 
         return $catalogo;
     }
@@ -169,7 +164,6 @@ class Prenda
         return $catalogo_filtrado;
     }
 
-
     /**
      * Devuelve el catálogo de un tipo de marca en particular
      * @param int $nombre_prenda id de la marca a filtrar
@@ -196,7 +190,6 @@ class Prenda
      */
     public function catalogo_por_id(int $id)
     {
-   
         $query = "SELECT * FROM prendas WHERE id = $id";
         $conexion = (new Conexion())->getConexion();
         $PDOStatement = $conexion->prepare($query);
@@ -234,6 +227,4 @@ class Prenda
 
         return $resultado;
     }
-
-   
 }

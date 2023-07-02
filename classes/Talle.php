@@ -72,9 +72,9 @@ class Talle
     }
 
     /**
-     * Insertar en la tabla Talles un nuevo talle
-     * @param string $talle talle nuevo a actualizar
-     * @param number $id id del talle nuevo a actualizar
+     * Editar en la tabla Talles un talle
+     * @param string $talle talle a actualizar
+     * @param number $id id del talle a actualizar
      */
     public function edit($talle, $id)
     {
@@ -85,5 +85,16 @@ class Talle
             'id' => $id,
             'talle' => $talle,
         ]);
+    }
+
+    /**
+     * Elimina esta instancia de la base de datos (talle)
+     */
+    public function delete()
+    {
+        $conexion = (new Conexion())->getConexion();
+        $query = "DELETE FROM talle WHERE id = ?;";
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->execute([$this->id]);
     }
 }

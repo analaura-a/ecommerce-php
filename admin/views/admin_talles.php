@@ -5,7 +5,7 @@ $talles = (new Talle())->lista_completa();
 <div class="row my-5">
     <div class="col">
 
-        <h1 class="text-center mb-5 fw-bold">Administración de Talles</h1>
+        <h1 class="text-center mb-5 fw-bold">Administración de la tabla de talles</h1>
 
         <div class="row mb-5 d-flex align-items-center">
 
@@ -25,7 +25,7 @@ $talles = (new Talle())->lista_completa();
 
                             <td>
                                 <a href="index.php?seccion=edit_talle&id=<?= $t->getId() ?>" role="button" class="d-block btn btn-sm btn-warning mb-1" style="max-width:300px">Editar</a>
-                                <a href="index.php?seccion=delete_talle&id=<?= $t->getId() ?>" role="button" class="d-block btn btn-sm btn-danger" style="max-width:300px">Eliminar</a>
+                                <a href="actions/delete_talle_action.php?id=<?= $t->getId() ?>" role="button" class="d-block btn btn-sm btn-danger" style="max-width:300px">Eliminar</a>
                             </td>
                         </tr>
                     <?PHP } ?>

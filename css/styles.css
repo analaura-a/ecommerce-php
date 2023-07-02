@@ -377,6 +377,14 @@ h6 {
     background-color: #f5eaff;
 }
 
+.navbar-admin {
+    color: var(--bs-navbar-brand-hover-color);
+}
+
+.navbar-admin:hover {
+    color: var(--lilac);
+}
+
 /*Tablas*/
 .table {
     margin: 0 auto;
@@ -384,16 +392,12 @@ h6 {
     max-width: 100%;
 }
 
-/* .table>:not(caption)>*>* {
-    padding: 8vw 10vw;
-} */
-
 @media (min-width: 992px) {
     .table {
         width: fit-content;
     }
 
     .table>:not(caption)>*>* {
-        padding: 40px 60px;
+        padding: 1vw;
     }
 }

@@ -17,7 +17,19 @@ $whiteList = [
     "edit_talle" => [
         "titulo" => "Editar un talle existente"
     ],
-  
+    "admin_marcas" => [
+        "titulo" => "Administración de marcas"
+    ],
+    "add_marca" => [
+        "titulo" => "Agregar nueva marca"
+    ],
+    "edit_marca" => [
+        "titulo" => "Editar una marca existente"
+    ],
+    "admin_prendas" => [
+        "titulo" => "Administración de prendas"
+    ],
+
 ];
 
 $vista = "404";
@@ -64,7 +76,8 @@ if (array_key_exists($seccion, $whiteList)) {
     </main>
 
     <!--FOOTER que vamos a traer con require-->
-    <?php //require_once "includes/footer.php" ?>
+    <?php //require_once "includes/footer.php" 
+    ?>
 
     <!--JS Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

@@ -65,4 +65,23 @@ class Marca
 
         return $resultado;
     }
+
+    /*
+     * Obtener todas las marcas
+     */
+    public function lista_completa()
+    {
+        $resultado = [];
+
+        $query = "SELECT * FROM marca";
+        $conexion = (new Conexion())->getConexion();
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
+        $PDOStatement->execute();
+
+        $resultado = $PDOStatement->fetchAll();
+
+        return $resultado;
+    }
+
 }

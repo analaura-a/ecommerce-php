@@ -1,8 +1,6 @@
 <?PHP
 
-require_once "classes/Conexion.php";
-require_once "classes/Marca.php";
-require_once "classes/Talle.php";
+require_once "functions/autoload.php";
 
 $seccion = $_GET['seccion'] ?? "home";
 

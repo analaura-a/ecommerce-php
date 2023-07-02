@@ -1,5 +1,6 @@
 <?php
-class Conexion{
+class Conexion
+{
     public const DB_SERVER = "localhost"; //127.0.0.1
     public const DB_USER = "root";
     public const DB_PASS = "";
@@ -10,10 +11,10 @@ class Conexion{
     public function __construct()
     {
         try {
-            $this->db = new PDO(self::DB_DSN, self::DB_USER, self::DB_PASS);
+            $this->db = new PDO(self::DB_DSN, self::DB_USER, self::DB_PASS, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         } catch (Exception $e) {
             die('Error al conectar con MySQL.');
-        } 
+        }
     }
 
     /**

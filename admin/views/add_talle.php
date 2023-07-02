@@ -10,7 +10,7 @@
                     <input type="text" class="form-control" id="talle" name="talle" required>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Cargar</button>
+                <button type="submit" class="btn btn-primary">Agregar</button>
             </form>
 
 

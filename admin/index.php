@@ -1,9 +1,11 @@
 <?PHP
 
-require_once "../classes/Conexion.php";
-require_once "../classes/Prenda.php";
-require_once "../classes/Marca.php";
-require_once "../classes/Talle.php";
+// require_once "../classes/Conexion.php";
+// require_once "../classes/Prenda.php";
+// require_once "../classes/Marca.php";
+// require_once "../classes/Talle.php";
+
+require_once "../functions/autoload.php";
 
 $seccion = $_GET['seccion'] ?? "dashboard";
 
@@ -16,6 +18,9 @@ $whiteList = [
     ],
     "add_talle" => [
         "titulo" => "Agregar nuevo talle"
+    ],
+    "edit_talle" => [
+        "titulo" => "Editar un talle existente"
     ],
   
 ];

@@ -379,15 +379,20 @@ h6 {
 
 /*Tablas*/
 .table {
-    width: fit-content;
     margin: 0 auto;
+    overflow-x: scroll;
+    max-width: 100%;
 }
 
-.table>:not(caption)>*>* {
+/* .table>:not(caption)>*>* {
     padding: 8vw 10vw;
-}
+} */
 
 @media (min-width: 992px) {
+    .table {
+        width: fit-content;
+    }
+
     .table>:not(caption)>*>* {
         padding: 40px 60px;
     }

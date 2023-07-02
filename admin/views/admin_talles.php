@@ -14,6 +14,8 @@ $talles = (new Talle())->lista_completa();
                     <tr>
                         <th scope="col" width="15%">ID</th>
                         <th scope="col">Talle</th>
+                        <th scope="col">Centímetros</th>
+                        <th scope="col">Tipo</th>
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>
@@ -22,6 +24,8 @@ $talles = (new Talle())->lista_completa();
                         <tr>
                             <td><?= $t->getId() ?></td>
                             <td><?= $t->getTalle() ?></td>
+                            <td><?= $t->getCentimetros() ?></td>
+                            <td><?= $t->getTipo() ?></td>
 
                             <td>
                                 <a href="index.php?seccion=edit_talle&id=<?= $t->getId() ?>" role="button" class="d-block btn btn-sm btn-warning mb-1" style="max-width:300px">Editar</a>

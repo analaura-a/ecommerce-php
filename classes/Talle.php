@@ -5,6 +5,8 @@ class Talle
     //Atributos
     protected $id;
     protected $talle;
+    protected $centimetros;
+    protected $tipo;
 
     //Métodos
     /**
@@ -21,6 +23,22 @@ class Talle
     public function getTalle()
     {
         return $this->talle;
+    }
+
+    /**
+     * Get the value of centimetros
+     */
+    public function getCentimetros()
+    {
+        return $this->centimetros;
+    }
+
+    /**
+     * Get the value of tipo
+     */
+    public function getTipo()
+    {
+        return $this->tipo;
     }
 
     /**
@@ -60,30 +78,38 @@ class Talle
     /**
      * Insertar en la tabla Talles un nuevo talle
      * @param string $talle talle nuevo a insertar
+     * @param number $centimetros centimetros de la medida correspondiente al talle
+     * @param string $tipo parte del cuerpo a la que hace referencia la medida
      */
-    public function insert($talle)
+    public function insert($talle, $centimetros, $tipo)
     {
         $conexion = (new Conexion())->getConexion();
-        $query = "INSERT INTO talle VALUES(NULL, :talle)";
+        $query = "INSERT INTO talle VALUES(NULL, :talle, :centimetros, :tipo)";
         $PDOStatement = $conexion->prepare($query);
         $PDOStatement->execute([
             'talle' => $talle,
+            'centimetros' => $centimetros,
+            'tipo' => $tipo,
         ]);
     }
 
     /**
      * Editar en la tabla Talles un talle
      * @param string $talle talle a actualizar
+     * @param number $centimetros centimetros de la medida correspondiente al talle
+     * @param string $tipo parte del cuerpo a la que hace referencia la medida
      * @param number $id id del talle a actualizar
      */
-    public function edit($talle, $id)
+    public function edit($talle, $centimetros, $tipo, $id)
     {
         $conexion = (new Conexion())->getConexion();
-        $query = "UPDATE talle SET talle = :talle WHERE talle.id = :id";
+        $query = "UPDATE talle SET talle = :talle, centimetros = :centimetros, tipo = :tipo WHERE talle.id = :id";
         $PDOStatement = $conexion->prepare($query);
         $PDOStatement->execute([
             'id' => $id,
             'talle' => $talle,
+            'centimetros' => $centimetros,
+            'tipo' => $tipo,
         ]);
     }
 

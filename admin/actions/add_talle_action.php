@@ -9,7 +9,7 @@ $talle = $_POST;
 // echo "</pre>";
 
 try {
-    (new Talle())->insert($talle["talle"]);
+    (new Talle())->insert($talle["talle"], $talle["centimetros"], $talle["tipo"]);
     header("Location: ../index.php?seccion=admin_talles");
 } catch (Exception $e) {
     die("No se pudo cargar el talle :(");

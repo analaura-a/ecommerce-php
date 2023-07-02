@@ -1,0 +1,1 @@
+<h1 class="h1 text-center mt-5 mb-5">Panel de <span class="lilac-text">administración</span></h1>

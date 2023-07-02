@@ -56,4 +56,18 @@ class Talle
 
         return $resultado;
     }
+
+    /**
+     * Insertar en la tabla Talles un nuevo talle
+     * * @param $talle talle nuevo a insertar
+     */
+    public function insert($talle)
+    {
+        $conexion = (new Conexion())->getConexion();
+        $query = "INSERT INTO talle VALUES(NULL, :talle)";
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->execute([
+            'talle' => $talle,
+        ]);
+    }
 }

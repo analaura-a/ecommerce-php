@@ -1,39 +1,23 @@
 <?PHP
 
-require_once "classes/Conexion.php";
-require_once "classes/Marca.php";
-require_once "classes/Talle.php";
+require_once "../classes/Conexion.php";
+require_once "../classes/Prenda.php";
+require_once "../classes/Marca.php";
+require_once "../classes/Talle.php";
 
-$seccion = $_GET['seccion'] ?? "home";
+$seccion = $_GET['seccion'] ?? "dashboard";
 
 $whiteList = [
-    "home" => [
-        "titulo" => "LILAC | Tienda online de ropa femenina"
+    "dashboard" => [
+        "titulo" => "Panel de administración"
     ],
-    "about" => [
-        "titulo" => "Acerca de Lilac"
+    "admin_talles" => [
+        "titulo" => "Administración de talles"
     ],
-    "catalogo-completo" => [
-        "titulo" => "Catálogo | Todas las prendas"
+    "add_talle" => [
+        "titulo" => "Agregar nuevo talle"
     ],
-    "catalogo" => [
-        "titulo" => "Catálogo | Categorías"
-    ],
-    "catalogo-prenda" => [
-        "titulo" => "Catálogo | Prendas"
-    ],
-    "catalogo-marca" => [
-        "titulo" => "Catálogo | Marcas"
-    ],
-    "product-detail" => [
-        "titulo" => "Detalle de la prenda"
-    ],
-    "contacto" => [
-        "titulo" => "¡Contactate con nosotras!"
-    ],
-    "datos-alumna" => [
-        "titulo" => "Datos de la alumna"
-    ]
+  
 ];
 
 $vista = "404";
@@ -60,12 +44,10 @@ if (array_key_exists($seccion, $whiteList)) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
     <!--CSS de autora-->
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
 </head>
 
 <body class="body">
-
-    <p class="publicidad text-center py-1 fw-bold fs-7">3 cuotas sin interés</p>
 
     <header>
         <!--NAV que vamos a traer con require-->
@@ -82,7 +64,7 @@ if (array_key_exists($seccion, $whiteList)) {
     </main>
 
     <!--FOOTER que vamos a traer con require-->
-    <?php require_once "includes/footer.php" ?>
+    <?php //require_once "includes/footer.php" ?>
 
     <!--JS Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

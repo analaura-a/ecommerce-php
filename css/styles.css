@@ -350,7 +350,7 @@ h6 {
     border-color: var(--lilac);
 }
 
-.card-message-form{
+.card-message-form {
     background-color: hsl(210, 17%, 98%);
     padding: 3.75rem 2.8rem;
     border-radius: 16px;
@@ -369,4 +369,26 @@ h6 {
         max-width: 40%;
     }
 
+}
+
+/* PANEL DE ADMINISTRACIÓN */
+/*Nav*/
+.bg-nav-admin {
+    background-color: #f5eaff;
+}
+
+/*Tablas*/
+.table {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.table>:not(caption)>*>* {
+    padding: 8vw 10vw;
+}
+
+@media (min-width: 992px) {
+    .table>:not(caption)>*>* {
+        padding: 40px 60px;
+    }
 }

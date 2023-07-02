@@ -1,8 +1,5 @@
 <?php
 
-require_once "classes/Marca.php";
-require_once "classes/Talle.php";
-
 class Prenda
 {
     //Atributos

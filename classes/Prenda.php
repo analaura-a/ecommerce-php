@@ -248,7 +248,7 @@ class Prenda
      * @param string $publicacion fecha de publicación
      * @param int $marca_id id de la marca que tiene la prenda
      */
-    public function insert($nombre, $categoria, $prenda, $precio, $color, $talle_id, $descripcion, $imagen, $publicacion, $marca_id)
+    public function insert($nombre, $categoria, $prenda, $precio, $color, $talle_id, $descripcion, $imagen, $publicacion, $marca_id): int
     {
         $conexion = (new Conexion())->getConexion();
         $query = "INSERT INTO prendas VALUES(NULL, :nombre, :categoria, :prenda, :precio, :color, :talle_id, :descripcion, :imagen, :publicacion, :marca_id)";
@@ -265,6 +265,7 @@ class Prenda
             'publicacion' => $publicacion,
             'marca_id' => $marca_id,
         ]);
+        return $conexion->lastInsertId();
     }
 
     /**
@@ -310,6 +311,27 @@ class Prenda
         $PDOStatement = $conexion->prepare($query);
         $PDOStatement->execute([$this->id]);
     }
+
+
+    /**
+     * Crea un vinculo de entre una prenda y talles secundarios
+     * @param int $id_prenda ID de la prenda
+     * @param int $id_talle ID del talle
+     */
+    public function add_talles_sec($id_prenda, $id_talle)
+    {
+        $conexion = (new Conexion())->getConexion();
+        $query = "INSERT INTO prenda_x_talle VALUES (NULL, :id_prenda, :id_talle)";
+
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->execute(
+            [
+                'id_prenda' => $id_prenda,
+                'id_talle' => $id_talle
+            ]
+        );
+    }
+
 
     /**
      * Devuelve el precio de la prenda formateado como dinero

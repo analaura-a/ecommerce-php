@@ -7,7 +7,7 @@ $fileData = $_FILES['imagen'];
 
 try {
     $imagen = (new Imagen())->subirImagen(__DIR__ . "/../../img/productos", $fileData);
-    (new Prenda())->insert(
+    $prendaId = (new Prenda())->insert(
         $prenda['nombre'],
         $prenda['categoria'],
         $prenda['prenda'],
@@ -19,6 +19,9 @@ try {
         $prenda['publicacion'],
         $prenda['marca_id'],
     );
+    foreach ($prenda["talles_secundarios"] as $ps) {
+        (new Prenda())->add_talles_sec($prendaId, $ps);
+    }
     header('Location: ../index.php?seccion=admin_prendas');
 } catch (\Exception $e) {
     die("No se pudo cargar el personaje =(");

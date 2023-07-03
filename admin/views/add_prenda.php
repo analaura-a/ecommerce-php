@@ -22,9 +22,9 @@ $talles = (new Talle())->lista_completa();
             <label for="categoria" class="form-label">Categoría</label>
             <select class="form-select" name="categoria" id="categoria" required>
                 <option value="" selected disabled>Elegí una opción</option>
-                <?php foreach ($prenda->getCategoriasDisponibles() as $categoriaD) {  ?>
-                    <option value="<?= $categoriaD ?>"><?= $categoriaD ?></option>
-                <?php } ?>
+                <option value="verano-2023">Temporada primavera/verano</option>
+                <option value="invierno-2023">Temporada otoño/invierno</option>
+                <option value="trending">Trending</option>
             </select>
         </div>
 

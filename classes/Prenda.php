@@ -15,7 +15,6 @@ class Prenda
     protected $publicacion;
     protected $marca_id;
     protected $tiposDePrenda = ["Buzo", "Camisa", "Campera", "Chaleco", "Jumper", "Musculosa", "Pollera", "Remera", "Sweater", "Vestido"];
-    protected $categoriasDisponibles = ["verano-2023", "invierno-2023", "trending"];
 
 
     //Métodos
@@ -136,14 +135,6 @@ class Prenda
     }
 
     /**
-     * Get the value of categoriasDisponibles
-     */
-    public function getCategoriasDisponibles()
-    {
-        return $this->categoriasDisponibles;
-    }
-
-    /**
      * Devuelve el catálogo de productos entero
      */
     public function catalogo_completo(): array
@@ -235,21 +226,18 @@ class Prenda
         return $prendaSeleccionada;
     }
 
-
-
-
     /**
      * Insertar en la tabla prendas una nueva prenda
-     * @param string $nombre talle nuevo a insertar
-     * @param string $categoria centimetros de la medida correspondiente al talle
-     * @param string $prenda parte del cuerpo a la que hace referencia la medida
-     * @param int $precio parte del cuerpo a la que hace referencia la medida
-     * @param string $color parte del cuerpo a la que hace referencia la medida
-     * @param int $talle_id parte del cuerpo a la que hace referencia la medida
-     * @param string $descripcion parte del cuerpo a la que hace referencia la medida
-     * @param string $imagen parte del cuerpo a la que hace referencia la medida
-     * @param string $publicacion parte del cuerpo a la que hace referencia la medida
-     * @param int $marca_id parte del cuerpo a la que hace referencia la medida
+     * @param string $nombre nombre de la prenda
+     * @param string $categoria categoria de la prenda
+     * @param string $prenda tipo de prenda
+     * @param int $precio
+     * @param string $color
+     * @param int $talle_id id del talle que tiene la prenda
+     * @param string $descripcion 
+     * @param string $imagen 
+     * @param string $publicacion fecha de publicación
+     * @param int $marca_id id de la marca que tiene la prenda
      */
     public function insert($nombre, $categoria, $prenda, $precio, $color, $talle_id, $descripcion, $imagen, $publicacion, $marca_id)
     {
@@ -270,16 +258,38 @@ class Prenda
         ]);
     }
 
+    /**
+     * Insertar en la tabla prendas una nueva prenda
+     * @param string $nombre nombre de la prenda
+     * @param string $categoria categoria de la prenda
+     * @param string $prenda tipo de prenda
+     * @param int $precio
+     * @param string $color
+     * @param int $talle_id id del talle que tiene la prenda
+     * @param string $descripcion 
+     * @param string $publicacion fecha de publicación
+     * @param int $marca_id id de la marca que tiene la prenda
+     * @param int $id id del producto a editar
+     */
+    public function edit($nombre, $categoria, $prenda, $precio, $color, $talle_id, $descripcion, $publicacion, $marca_id, $id)
+    {
+        $conexion = (new Conexion())->getConexion();
+        $query = "UPDATE prendas SET nombre = :nombre, categoria = :categoria, prenda = :prenda, precio = :precio, color = :color, talle_id = :talle_id, descripcion = :descripcion, publicacion = :publicacion, marca_id = :marca_id WHERE prendas.id = :id";
 
-
-
-
-
-
-
-
-
-
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->execute([
+            'nombre' => $nombre,
+            'categoria' => $categoria,
+            'prenda' => $prenda,
+            'precio' => $precio,
+            'color' => $color,
+            'talle_id' => $talle_id,
+            'descripcion' => $descripcion,
+            'publicacion' => $publicacion,
+            'marca_id' => $marca_id,
+            'id' => $id,
+        ]);
+    }
 
     /**
      * Devuelve el precio de la prenda formateado como dinero

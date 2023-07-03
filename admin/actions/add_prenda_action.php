@@ -19,7 +19,7 @@ try {
         $prenda['publicacion'],
         $prenda['marca_id'],
     );
-    header('Location: ../index.php?sec=admin_personajes');
+    header('Location: ../index.php?seccion=admin_prendas');
 } catch (\Exception $e) {
     die("No se pudo cargar el personaje =(");
 }

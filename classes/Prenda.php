@@ -14,6 +14,9 @@ class Prenda
     protected $imagen;
     protected $publicacion;
     protected $marca_id;
+    protected $tiposDePrenda = ["Buzo", "Camisa", "Campera", "Chaleco", "Jumper", "Musculosa", "Pollera", "Remera", "Sweater", "Vestido"];
+    protected $categoriasDisponibles = ["verano-2023", "invierno-2023", "trending"];
+
 
     //Métodos
     /**
@@ -75,6 +78,14 @@ class Prenda
     }
 
     /**
+     * Get the value of talle_id
+     */
+    public function getTalle_id()
+    {
+        return $this->talle_id;
+    }
+
+    /**
      * Get the value of descripcion
      */
     public function getDescripcion()
@@ -106,6 +117,30 @@ class Prenda
         $marca = (new Marca())->get_x_id($this->marca_id);
         $nombre_marca = $marca->getNombre();
         return $nombre_marca;
+    }
+
+    /**
+     * Get the value of marca_id
+     */
+    public function getMarca_id()
+    {
+        return $this->marca_id;
+    }
+
+    /**
+     * Get the value of tiposDePrenda
+     */
+    public function getTiposDePrenda()
+    {
+        return $this->tiposDePrenda;
+    }
+
+    /**
+     * Get the value of categoriasDisponibles
+     */
+    public function getCategoriasDisponibles()
+    {
+        return $this->categoriasDisponibles;
     }
 
     /**

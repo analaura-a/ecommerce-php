@@ -2,6 +2,7 @@
 
 require_once "../functions/autoload.php";
 
+$prenda = (new Prenda());
 $marcas = (new Marca())->lista_completa();
 $talles = (new Talle())->lista_completa();
 
@@ -21,9 +22,9 @@ $talles = (new Talle())->lista_completa();
             <label for="categoria" class="form-label">Categoría</label>
             <select class="form-select" name="categoria" id="categoria" required>
                 <option value="" selected disabled>Elegí una opción</option>
-                <option value="verano-2023">Temporada primavera/verano</option>
-                <option value="invierno-2023">Temporada otoño/invierno</option>
-                <option value="trending">Trending</option>
+                <?php foreach ($prenda->getCategoriasDisponibles() as $categoriaD) {  ?>
+                    <option value="<?= $categoriaD ?>"><?= $categoriaD ?></option>
+                <?php } ?>
             </select>
         </div>
 
@@ -31,16 +32,9 @@ $talles = (new Talle())->lista_completa();
             <label for="prenda" class="form-label">Tipo de prenda</label>
             <select class="form-select" name="prenda" id="prenda" required>
                 <option value="" selected disabled>Elegí una opción</option>
-                <option value="Buzo">Buzo</option>
-                <option value="Camisa">Camisa</option>
-                <option value="Campera">Campera</option>
-                <option value="Chaleco">Chaleco</option>
-                <option value="Jumper">Jumper</option>
-                <option value="Musculosa">Musculosa</option>
-                <option value="Pollera">Pollera</option>
-                <option value="Remera">Remera</option>
-                <option value="Sweater">Sweater</option>
-                <option value="Vestido">Vestido</option>
+                <?php foreach ($prenda->getTiposDePrenda() as $tipoDePrenda) {  ?>
+                    <option value="<?= $tipoDePrenda ?>"><?= $tipoDePrenda ?></option>
+                <?php } ?>
             </select>
         </div>
 

@@ -39,7 +39,7 @@ $prendas = (new Prenda())->catalogo_completo();
 
 
                         <td>
-                            <a href="index.php?seccion=edit_marca&id=<?= $p->getId() ?>" role="button" class="d-block btn btn-sm btn-warning mb-1" style="max-width:300px">Editar</a>
+                            <a href="index.php?seccion=edit_prenda&id=<?= $p->getId() ?>" role="button" class="d-block btn btn-sm btn-warning mb-1" style="max-width:300px">Editar</a>
                             <a href="actions/delete_marca_action.php?id=<?= $p->getId() ?>" role="button" class="d-block btn btn-sm btn-danger" style="max-width:300px">Eliminar</a>
                         </td>
                     </tr>

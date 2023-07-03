@@ -15,6 +15,7 @@ class Prenda
     protected $publicacion;
     protected $marca_id;
     protected $talles_secundarios;
+    protected $talles_secundarios_ids;
     protected $tiposDePrenda = ["Buzo", "Camisa", "Campera", "Chaleco", "Jumper", "Musculosa", "Pollera", "Remera", "Sweater", "Vestido"];
 
 
@@ -136,6 +137,20 @@ class Prenda
     }
 
     /**
+     * Get the value of talles_secundarios_ids
+     */
+    public function getTalles_secundarios_ids(): array
+    {
+        $result = [];
+
+        $talles_secundarios_ids = explode(",", $this->talles_secundarios);
+        foreach ($talles_secundarios_ids as $value) {
+            $result[] = $value;
+        }
+        return $result;
+    }
+
+    /**
      * Get the value of tiposDePrenda
      */
     public function getTiposDePrenda()
@@ -225,11 +240,17 @@ class Prenda
      */
     public function catalogo_por_id(int $id)
     {
-        $query = "SELECT * FROM prendas WHERE id = $id";
+        // $query = "SELECT * FROM prendas WHERE id = $id";
+
+        $query = "SELECT prendas.*, GROUP_CONCAT(prenda_x_talle.id_talle) AS talles_secundarios 
+        FROM prendas LEFT JOIN prenda_x_talle 
+        ON prenda_x_talle.id_prenda = prendas.id 
+        WHERE prendas.id = ?
+        GROUP BY prendas.id";
         $conexion = (new Conexion())->getConexion();
         $PDOStatement = $conexion->prepare($query);
         $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
-        $PDOStatement->execute();
+        $PDOStatement->execute([$id]);
 
         $prendaSeleccionada = $PDOStatement->fetch();
         return $prendaSeleccionada;
@@ -328,6 +349,22 @@ class Prenda
             [
                 'id_prenda' => $id_prenda,
                 'id_talle' => $id_talle
+            ]
+        );
+    }
+
+    /**
+     * Vaciar lista de personajes secundarios
+     * @param int $id_prenda
+     */
+    public function clear_talles_sec($id_prenda)
+    {
+        $conexion = (new Conexion())->getConexion();
+        $query = "DELETE FROM prenda_x_talle WHERE id_prenda = :id_prenda";
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->execute(
+            [
+                'id_prenda' => $id_prenda
             ]
         );
     }

@@ -19,6 +19,7 @@ echo "</pre>";
 // echo "</pre>";
 
 try {
+    $prendaEditada = (new Prenda());
 
     // if (!empty($fileData['tmp_name'])) {
 
@@ -28,6 +29,15 @@ try {
 
     //     $imagen = (new Imagen())->subirImagen(__DIR__ . "/../../img/productos", $fileData);
     // }
+    (new Prenda())->clear_talles_sec($id);
+
+    print_r($prenda['talles_secundarios']);
+
+    if (isset($prenda['talles_secundarios'])) {
+        foreach ($prenda['talles_secundarios'] as $talle_id) {
+            $prendaEditada->add_talles_sec($id, $talle_id);
+        }
+    }
 
     (new Prenda())->edit(
         $prenda['nombre'],

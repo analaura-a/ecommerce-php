@@ -35,6 +35,9 @@ $whiteList = [
     "edit_prenda" => [
         "titulo" => "Editar una marca existente"
     ],
+    "login" => [
+        "titulo" => "Login | Iniciar sesión"
+    ],
 
 ];
 

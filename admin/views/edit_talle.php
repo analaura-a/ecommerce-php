@@ -14,6 +14,7 @@ $talle = (new Talle())->get_x_id($id);
                 <div class="mb-3">
                     <label for="talle" class="form-label">Talle</label>
                     <input type="text" class="form-control" id="talle" name="talle" value="<?= $talle->getTalle() ?>" required>
+                    <div id="textareaHelp" class="form-text">Nombre para referenciar el talle, puede ser numérico (40) o en letras (XL).</div>
                 </div>
                 <div class="mb-3">
                     <label for="centimetros" class="form-label">Centimetros</label>

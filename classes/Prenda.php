@@ -292,6 +292,17 @@ class Prenda
     }
 
     /**
+     * Elimina esta instancia de la base de datos (Prendas)
+     */
+    public function delete()
+    {
+        $conexion = (new Conexion())->getConexion();
+        $query = "DELETE FROM prendas WHERE id = ?;";
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->execute([$this->id]);
+    }
+
+    /**
      * Devuelve el precio de la prenda formateado como dinero
      */
     public function precio_formateado(): string

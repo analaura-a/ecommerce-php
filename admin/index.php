@@ -29,6 +29,12 @@ $whiteList = [
     "admin_prendas" => [
         "titulo" => "Administración de prendas"
     ],
+    "add_prenda" => [
+        "titulo" => "Agregar nueva prenda"
+    ],
+    "edit_prenda" => [
+        "titulo" => "Editar una marca existente"
+    ],
 
 ];
 

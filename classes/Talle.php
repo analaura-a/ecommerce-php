@@ -78,7 +78,7 @@ class Talle
     /**
      * Insertar en la tabla Talles un nuevo talle
      * @param string $talle talle nuevo a insertar
-     * @param number $centimetros centimetros de la medida correspondiente al talle
+     * @param int $centimetros centimetros de la medida correspondiente al talle
      * @param string $tipo parte del cuerpo a la que hace referencia la medida
      */
     public function insert($talle, $centimetros, $tipo)
@@ -96,9 +96,9 @@ class Talle
     /**
      * Editar en la tabla Talles un talle
      * @param string $talle talle a actualizar
-     * @param number $centimetros centimetros de la medida correspondiente al talle
+     * @param int $centimetros centimetros de la medida correspondiente al talle
      * @param string $tipo parte del cuerpo a la que hace referencia la medida
-     * @param number $id id del talle a actualizar
+     * @param int $id id del talle a actualizar
      */
     public function edit($talle, $centimetros, $tipo, $id)
     {

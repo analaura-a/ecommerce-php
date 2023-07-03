@@ -397,7 +397,7 @@ h6 {
         width: fit-content;
     }
 
-    .table>:not(caption)>*>* {
+    /* .table>:not(caption)>*>* {
         padding: 1vw;
-    }
+    } */
 }

@@ -200,6 +200,52 @@ class Prenda
         return $prendaSeleccionada;
     }
 
+
+
+
+    /**
+     * Insertar en la tabla prendas una nueva prenda
+     * @param string $nombre talle nuevo a insertar
+     * @param string $categoria centimetros de la medida correspondiente al talle
+     * @param string $prenda parte del cuerpo a la que hace referencia la medida
+     * @param int $precio parte del cuerpo a la que hace referencia la medida
+     * @param string $color parte del cuerpo a la que hace referencia la medida
+     * @param int $talle_id parte del cuerpo a la que hace referencia la medida
+     * @param string $descripcion parte del cuerpo a la que hace referencia la medida
+     * @param string $imagen parte del cuerpo a la que hace referencia la medida
+     * @param string $publicacion parte del cuerpo a la que hace referencia la medida
+     * @param int $marca_id parte del cuerpo a la que hace referencia la medida
+     */
+    public function insert($nombre, $categoria, $prenda, $precio, $color, $talle_id, $descripcion, $imagen, $publicacion, $marca_id)
+    {
+        $conexion = (new Conexion())->getConexion();
+        $query = "INSERT INTO prendas VALUES(NULL, :nombre, :categoria, :prenda, :precio, :color, :talle_id, :descripcion, :imagen, :publicacion, :marca_id)";
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->execute([
+            'nombre' => $nombre,
+            'categoria' => $categoria,
+            'prenda' => $prenda,
+            'precio' => $precio,
+            'color' => $color,
+            'talle_id' => $talle_id,
+            'descripcion' => $descripcion,
+            'imagen' => $imagen,
+            'publicacion' => $publicacion,
+            'marca_id' => $marca_id,
+        ]);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     /**
      * Devuelve el precio de la prenda formateado como dinero
      */

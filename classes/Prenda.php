@@ -14,6 +14,7 @@ class Prenda
     protected $imagen;
     protected $publicacion;
     protected $marca_id;
+    protected $talles_secundarios;
     protected $tiposDePrenda = ["Buzo", "Camisa", "Campera", "Chaleco", "Jumper", "Musculosa", "Pollera", "Remera", "Sweater", "Vestido"];
 
 
@@ -127,6 +128,14 @@ class Prenda
     }
 
     /**
+     * Get the value of talles_secundarios
+     */
+    public function getTalles_secundarios()
+    {
+        return $this->talles_secundarios;
+    }
+
+    /**
      * Get the value of tiposDePrenda
      */
     public function getTiposDePrenda()
@@ -141,7 +150,7 @@ class Prenda
     {
         $catalogo = [];
 
-        $query = "SELECT * FROM prendas";
+        $query = "SELECT prendas.*, GROUP_CONCAT(prenda_x_talle.id_talle) AS talles_secundarios FROM prendas LEFT JOIN prenda_x_talle ON prenda_x_talle.id_prenda = prendas.id GROUP BY prendas.id";
         $conexion = (new Conexion())->getConexion();
         $PDOStatement = $conexion->prepare($query);
         $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
@@ -330,3 +339,6 @@ class Prenda
         return $resultado;
     }
 }
+
+
+//SELECT prendas.*, GROUP_CONCAT(prenda_x_talle.id_talle) AS talles_secundarios FROM prendas LEFT JOIN prenda_x_talle ON prenda_x_talle.id_prenda = prendas.id GROUP BY prendas.id;

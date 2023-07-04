@@ -67,10 +67,6 @@
 
                     </ul>
                 </li>
-
-
-
-
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Marcas
@@ -93,18 +89,22 @@
                         </li>
                     </ul>
                 </li>
-
-
-
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?seccion=contacto">Contacto</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?seccion=datos-alumna">Datos de la alumna</a>
                 </li>
+                <li class="nav-item <?= $session ? "d-none" : "" ?>">
+                    <a class="nav-link " href="index.php?seccion=login">Iniciar sesión</a>
+                </li>
+                <li class="nav-item <?= $session ? "" : "d-none" ?>">
+                    <a class="nav-link" href="admin/actions/auth_logout.php">Cerrar sesión</a>
+                </li>
             </ul>
             <span class="navbar-text">
-                Envíos a toda la Argentina 💗
+                <!-- Envíos a toda la Argentina 💗 -->
+                <a class="nav-link" href="index.php?seccion=carrito">Carrito</a>
             </span>
         </div>
     </div>

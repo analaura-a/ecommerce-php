@@ -2,8 +2,13 @@
 
 require_once "functions/autoload.php";
 
-$seccion = $_GET['seccion'] ?? "home";
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
 
+$session = $_SESSION['loggedIn'] ?? FALSE;
+
+$seccion = $_GET['seccion'] ?? "home";
 $whiteList = [
     "home" => [
         "titulo" => "LILAC | Tienda online de ropa femenina"
@@ -31,6 +36,12 @@ $whiteList = [
     ],
     "datos-alumna" => [
         "titulo" => "Datos de la alumna"
+    ],
+    "login" => [
+        "titulo" => "Iniciar sesión"
+    ],
+    "carrito" => [
+        "titulo" => "Mi carrito"
     ]
 ];
 

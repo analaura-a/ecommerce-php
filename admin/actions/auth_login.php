@@ -6,7 +6,11 @@ $postData = $_POST;
 $login = (new Autenticacion())->log_in($postData['username'], $postData['pass']);
 
 if ($login) {
-    header('location: ../index.php?seccion=dashboard');
+    if ($login != "usuario")
+        header('location: ../index.php?seccion=dashboard');
+    else {
+        header('location: ../../index.php');
+    }
 } else {
-    header('location: ../index.php?seccion=login');
+    header('location: ../../index.php?seccion=login');
 }

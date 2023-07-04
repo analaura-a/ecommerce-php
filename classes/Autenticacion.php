@@ -7,7 +7,6 @@ class Autenticacion
      * Verifica las credenciales del usuario, y de ser correctas guarda los datos en la sesión
      * @param string $username El nombre de usuario provisto
      * @param string $password El password provisto
-     * @return bool Devuelve TRUE en caso que las credenciales sean correctas, FALSE en caso de que no lo sean
      */
     public function log_in(string $usuario, string $password): ?string
     {

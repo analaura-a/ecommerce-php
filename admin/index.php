@@ -2,41 +2,59 @@
 
 require_once "../functions/autoload.php";
 
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
+
+$session = isset($_SESSION['loggedIn']) ? '' : 'd-none';
+$logout = !isset($_SESSION['loggedIn']) ? '' : 'd-none';
+
 $seccion = $_GET['seccion'] ?? "dashboard";
 
 $whiteList = [
     "dashboard" => [
-        "titulo" => "Panel de administración"
+        "titulo" => "Panel de administración",
+        "restringido" => TRUE
     ],
     "admin_talles" => [
-        "titulo" => "Administración de talles"
+        "titulo" => "Administración de talles",
+        "restringido" => TRUE
     ],
     "add_talle" => [
-        "titulo" => "Agregar nuevo talle"
+        "titulo" => "Agregar nuevo talle",
+        "restringido" => TRUE
     ],
     "edit_talle" => [
-        "titulo" => "Editar un talle existente"
+        "titulo" => "Editar un talle existente",
+        "restringido" => TRUE
     ],
     "admin_marcas" => [
-        "titulo" => "Administración de marcas"
+        "titulo" => "Administración de marcas",
+        "restringido" => TRUE
     ],
     "add_marca" => [
-        "titulo" => "Agregar nueva marca"
+        "titulo" => "Agregar nueva marca",
+        "restringido" => TRUE
     ],
     "edit_marca" => [
-        "titulo" => "Editar una marca existente"
+        "titulo" => "Editar una marca existente",
+        "restringido" => TRUE
     ],
     "delete_marca" => [
-        "titulo" => "Eliminar una marca existente"
+        "titulo" => "Eliminar una marca existente",
+        "restringido" => TRUE
     ],
     "admin_prendas" => [
-        "titulo" => "Administración de prendas"
+        "titulo" => "Administración de prendas",
+        "restringido" => TRUE
     ],
     "add_prenda" => [
-        "titulo" => "Agregar nueva prenda"
+        "titulo" => "Agregar nueva prenda",
+        "restringido" => TRUE
     ],
     "login" => [
-        "titulo" => "Login | Iniciar sesión"
+        "titulo" => "Login | Iniciar sesión",
+        "restringido" => FALSE
     ],
 
 ];
@@ -47,6 +65,11 @@ $titulo = "404 | Página no encontrada";
 if (array_key_exists($seccion, $whiteList)) {
     $vista = $seccion;
     $titulo = $whiteList[$seccion]["titulo"];
+    if ($whiteList[$seccion]['restringido']) {
+        if (!isset($_SESSION['loggedIn'])) {
+            header('location: index.php?seccion=login');
+        }
+    }
 }
 
 ?>

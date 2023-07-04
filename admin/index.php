@@ -6,11 +6,12 @@ echo "<pre>";
 print_r($_SESSION);
 echo "</pre>";
 
+(new Autenticacion())->verify();
+
 $session = isset($_SESSION['loggedIn']) ? '' : 'd-none';
 $logout = !isset($_SESSION['loggedIn']) ? '' : 'd-none';
 
 $seccion = $_GET['seccion'] ?? "dashboard";
-
 $whiteList = [
     "dashboard" => [
         "titulo" => "Panel de administración",

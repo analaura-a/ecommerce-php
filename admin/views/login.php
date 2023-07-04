@@ -14,4 +14,7 @@
 
         <button type="submit" class="btn btn-primary">Login</button>
     </form>
+    <div>
+        <?= (new Alerta())->get_alertas() ?>
+    </div>
 </div>

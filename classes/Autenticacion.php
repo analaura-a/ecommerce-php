@@ -18,9 +18,6 @@ class Autenticacion
 
         $datosUsuario = (new Usuario())->usuario_x_username($usuario);
 
-        //echo "<pre>";
-        //var_dump($datosUsuario);
-        //echo "</pre>";
         if ($datosUsuario) {
             if (password_verify($password, $datosUsuario->getPassword())) {
                 echo "<p>EL PASSWORD ES CORRECTO! LOGUEAR!</p>";
@@ -30,11 +27,11 @@ class Autenticacion
                 $_SESSION['loggedIn'] = $datosLogin;
                 return $datosLogin['rol'];
             } else {
-                // (new Alerta())->add_alerta('danger', "El password ingresado no es correcto.");
+                (new Alerta())->add_alerta('danger', "¡La contraseña ingresada no es correcta!");
                 return null;
             }
         } else {
-            // (new Alerta())->add_alerta('warning', "El usuario ingresado no se encontró en nuestra base de datos.");
+            (new Alerta())->add_alerta('warning', "El usuario ingresado no se encontró en nuestra base de datos.");
             return null;
         }
     }
@@ -53,7 +50,8 @@ class Autenticacion
         if (isset($_SESSION['loggedIn'])) {
             return TRUE;
         } else {
-            //header('location: ./index.php?sec=login');
+            return FALSE;
+            header('location: ./index.php?seccion=login');
         }
     }
 }

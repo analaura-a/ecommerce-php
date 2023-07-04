@@ -10,12 +10,12 @@
         <input type="file" class="form-control" id="logo" name="logo" accept="image/*" required>
     </div>
     <div class="col-md-12 mb-3">
-        <label for="historia" class="form-label">Historia</label>
-        <input type="text" class="form-control" id="historia" name="historia" required>
+        <label for="fundador" class="form-label">Fundador</label>
+        <input type="text" class="form-control" id="fundador" name="fundador" required>
     </div>
     <div class="col-md-6 mb-3">
-        <label for="fundador" class="form-label">Fundador/a</label>
-        <textarea name="fundador" id="fundador" cols="30" maxlength="260" rows="10" class="form-control"></textarea>
+        <label for="historia" class="form-label">Historia</label>
+        <textarea name="historia" id="historia" cols="30" maxlength="260" rows="10" class="form-control"></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Cargar</button>
 

@@ -106,16 +106,15 @@ class Marca
     /*
      * Editar un valor existente en la tabla Marca
      */
-    public function edit($nombre, $logo, $historia, $fundador, $id)
+    public function edit($nombre, $historia, $fundador, $id)
     {
         $conexion = (new Conexion())->getConexion();
-        $query = "UPDATE  marca SET nombre = :nombre,logo = :logo,historia =:historia,fundador = :fundador WHERE marca.id = :id";
+        $query = "UPDATE  marca SET nombre = :nombre,historia =:historia,fundador = :fundador WHERE marca.id = :id";
         $PDOStatement = $conexion->prepare($query);
         $PDOStatement->execute(
             [
                 'id' => $id,
                 'nombre' => $nombre,
-                'logo' => $logo,
                 'historia' => $historia,
                 'fundador' => $fundador,
 

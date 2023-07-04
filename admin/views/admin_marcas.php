@@ -25,11 +25,11 @@ $marcas = (new Marca())->lista_completa();
                         <td><?= $m->getNombre() ?></td>
                         <td><?= $m->getHistoria() ?></td>
                         <td><?= $m->getFundador() ?></td>
-                        <td><?= $m->getLogo() ?></td>
+                        <td><img src="../img/logos/<?= $m->getLogo() ?>" alt="<?= $m->getNombre() ?>"></td>
 
                         <td>
                             <a href="index.php?seccion=edit_marca&id=<?= $m->getId() ?>" role="button" class="d-block btn btn-sm btn-warning mb-1" style="max-width:300px">Editar</a>
-                            <a href="actions/delete_marca_action.php?id=<?= $m->getId() ?>" role="button" class="d-block btn btn-sm btn-danger" style="max-width:300px">Eliminar</a>
+                            <a href="index.php?seccion=delete_marca&id=<?= $m->getId() ?>" role="button" class="d-block btn btn-sm btn-danger" style="max-width:300px">Eliminar</a>
                         </td>
                     </tr>
                 <?PHP } ?>

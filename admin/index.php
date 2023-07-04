@@ -26,6 +26,9 @@ $whiteList = [
     "edit_marca" => [
         "titulo" => "Editar una marca existente"
     ],
+    "delete_marca" => [
+        "titulo" => "Eliminar una marca existente"
+    ],
     "admin_prendas" => [
         "titulo" => "Administración de prendas"
     ],

@@ -84,4 +84,53 @@ class Marca
         return $resultado;
     }
 
+    /*
+     * Insertar un nuevo valor en la tabla Marca
+     */
+    public function insert($nombre, $logo, $historia, $fundador)
+    {
+        $conexion = (new Conexion())->getConexion();
+        $query = "INSERT INTO marca VALUES(NULL,:nombre,:logo,:historia,:fundador)";
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->execute(
+            [
+                'nombre' => $nombre,
+                'logo' => $logo,
+                'historia' => $historia,
+                'fundador' => $fundador,
+
+            ]
+        );
+    }
+
+    /*
+     * Editar un valor existente en la tabla Marca
+     */
+    public function edit($nombre, $logo, $historia, $fundador, $id)
+    {
+        $conexion = (new Conexion())->getConexion();
+        $query = "UPDATE  marca SET nombre = :nombre,logo = :logo,historia =:historia,fundador = :fundador WHERE marca.id = :id";
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->execute(
+            [
+                'id' => $id,
+                'nombre' => $nombre,
+                'logo' => $logo,
+                'historia' => $historia,
+                'fundador' => $fundador,
+
+            ]
+        );
+    }
+
+    /*
+     * Eliminar un valor existente en la tabla Marca
+     */
+    public function delete()
+    {
+        $conexion = (new Conexion())->getConexion();
+        $query = "DELETE FROM marca WHERE id = ?;";
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->execute([$this->id]);
+    }
 }

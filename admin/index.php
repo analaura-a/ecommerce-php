@@ -27,6 +27,10 @@ $whiteList = [
         "titulo" => "Editar un talle existente",
         "restringido" => TRUE
     ],
+    "delete_talle" => [
+        "titulo" => "Eliminar un talle existente",
+        "restringido" => TRUE
+    ],
     "admin_marcas" => [
         "titulo" => "Administración de marcas",
         "restringido" => TRUE
@@ -49,6 +53,14 @@ $whiteList = [
     ],
     "add_prenda" => [
         "titulo" => "Agregar nueva prenda",
+        "restringido" => TRUE
+    ],
+    "edit_prenda" => [
+        "titulo" => "Editar una prenda existente",
+        "restringido" => TRUE
+    ],
+    "delete_prenda" => [
+        "titulo" => "Eliminar una prenda existente",
         "restringido" => TRUE
     ],
     "login" => [

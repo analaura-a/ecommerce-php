@@ -28,7 +28,7 @@ $talles = (new Talle())->lista_completa();
 
                         <td>
                             <a href="index.php?seccion=edit_talle&id=<?= $t->getId() ?>" role="button" class="d-block btn btn-sm btn-warning mb-1" style="max-width:300px">Editar</a>
-                            <a href="actions/delete_talle_action.php?id=<?= $t->getId() ?>" role="button" class="d-block btn btn-sm btn-danger" style="max-width:300px">Eliminar</a>
+                            <a href="index.php?seccion=delete_talle&id=<?= $t->getId() ?>" role="button" class="d-block btn btn-sm btn-danger" style="max-width:300px">Eliminar</a>
                         </td>
                     </tr>
                 <?PHP } ?>

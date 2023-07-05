@@ -333,6 +333,24 @@ class Prenda
         $PDOStatement->execute([$this->id]);
     }
 
+    /**
+     * Reemplaza la imagen de una prenda
+     * @param string $imagen
+     * @param int $id
+     */
+    public function reemplazar_imagen($imagen, $id)
+    {
+        $conexion = (new Conexion())->getConexion();
+        $query = "UPDATE prendas SET imagen = :imagen WHERE prendas.id = :id";
+
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->execute(
+            [
+                'id' => $id,
+                'imagen' => $imagen
+            ]
+        );
+    }
 
     /**
      * Crea un vinculo de entre una prenda y talles secundarios

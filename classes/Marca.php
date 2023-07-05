@@ -132,4 +132,23 @@ class Marca
         $PDOStatement = $conexion->prepare($query);
         $PDOStatement->execute([$this->id]);
     }
+
+    /**
+     * Reemplaza la imagen de una marca
+     * @param string $logo
+     * @param int $id
+     */
+    public function reemplazar_imagen($logo, $id)
+    {
+        $conexion = (new Conexion())->getConexion();
+        $query = "UPDATE marca SET logo = :logo WHERE marca.id = :id";
+
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->execute(
+            [
+                'id' => $id,
+                'logo' => $logo
+            ]
+        );
+    }
 }

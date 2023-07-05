@@ -4,7 +4,7 @@ require_once "../../functions/autoload.php";
 
 $id = $_GET['id'] ?? FALSE;
 $prenda = $_POST;
-// $fileData = $_FILES['imagen'] ?? FALSE;
+$fileData = $_FILES['imagen'] ?? FALSE;
 
 echo "<pre>";
 print_r($id);
@@ -14,24 +14,25 @@ echo "<pre>";
 print_r($prenda);
 echo "</pre>";
 
-// echo "<pre>";
-// print_r($fileData);
-// echo "</pre>";
+echo "<pre>";
+print_r($fileData);
+echo "</pre>";
 
 try {
     $prendaEditada = (new Prenda());
 
-    // if (!empty($fileData['tmp_name'])) {
+    if (!empty($fileData['tmp_name'])) {
 
-    //     if (!empty($prenda['antiguaImagen'])) {
-    //         (new Imagen())->borrarImagen(__DIR__ . "/../../img/productos/" . $prenda["antiguaImagen"]);
-    //     }
+        if (!empty($prenda['antiguaImagen'])) {
+            (new Imagen())->borrarImagen(__DIR__ . "/../../img/productos/" . $prenda["antiguaImagen"]);
+        }
 
-    //     $imagen = (new Imagen())->subirImagen(__DIR__ . "/../../img/productos", $fileData);
-    // }
+        $imagen = (new Imagen())->subirImagen(__DIR__ . "/../../img/productos", $fileData);
+
+        (new Prenda())->reemplazar_imagen($imagen, $id);
+    }
+
     (new Prenda())->clear_talles_sec($id);
-
-    print_r($prenda['talles_secundarios']);
 
     if (isset($prenda['talles_secundarios'])) {
         foreach ($prenda['talles_secundarios'] as $talle_id) {

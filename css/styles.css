@@ -26,6 +26,14 @@ h6 {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
 /*GENERAL*/
 :root {
     --manrope-300: 300;
@@ -34,7 +42,7 @@ h6 {
     --manrope-600: 600;
     --manrope-700: 700;
     --manrope-800: 800;
-    --lilac: hsl(300, 32%, 69%);
+    --lilac: hsl(290, 27%, 65%);
 
 }
 
@@ -386,6 +394,83 @@ h6 {
     color: var(--lilac);
 }
 
+/*Dashboard*/
+.dashboard>h1 {
+    margin: 5rem 0;
+}
+
+
+.container-dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+.h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-bottom: 0.625rem;
+    border-bottom: 0.0625rem solid hsl(0, 0%, 69%);
+    margin-bottom: 12px;
+}
+
+.dashboard-links {
+    display: flex;
+    justify-content: space-around;
+    gap: 5rem;
+    flex-wrap: wrap;
+
+    margin: 20px 0 0 0;
+    padding: 0;
+}
+
+.dashboard-links>li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.link-section {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #171718;
+}
+
+.section-emoji {
+    font-size: 5rem;
+}
+
+.dahsboard-shortcuts {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 0;
+}
+
+.dahsboard-shortcuts>li {
+    background-color: #e7d2ec;
+    padding: 5px 16px;
+    border-radius: 6px;
+}
+
+.dahsboard-shortcuts>li>a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #171718;
+}
+
+@media (min-width: 992px) {
+    .container-dashboard {
+        flex-direction: row;
+        gap: 3rem;
+    }
+}
+
+
 /*Tablas*/
 .table {
     margin: 0 auto;
@@ -393,12 +478,36 @@ h6 {
     max-width: 100%;
 }
 
+.table-header{
+    background-color: #f5eaff;
+    border-radius: 8px 8px 0 0;
+}
+
+.secondary-button{
+    background: none;
+    border: 1px solid #a48db9;
+    color: #a48db9;
+}
+
+.secondary-button:hover{
+    background: #a48db9;
+    color: #fafafa;
+}
+
+.primary-button-color{
+    background: #a48db9;
+    color: #fafafa;
+}
+
+.primary-button-color:hover{
+    color: #a48db9;
+    background: none;
+    border: 1px solid #a48db9;
+}
+
 @media (min-width: 992px) {
     .table {
         width: fit-content;
     }
 
-    /* .table>:not(caption)>*>* {
-        padding: 1vw;
-    } */
 }

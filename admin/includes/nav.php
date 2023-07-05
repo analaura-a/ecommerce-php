@@ -50,7 +50,7 @@
                                         } else {
                                             echo "d-none";
                                         } ?>">
-                Panel administrativo de Lilac 💗
+                ¡Hola, <?= $_SESSION['loggedIn']['username']?>! 💗
             </span>
         </div>
     </div>

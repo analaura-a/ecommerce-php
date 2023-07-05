@@ -26,7 +26,7 @@ $talle = (new Talle())->get_x_id($id);
                     <div id="textareaHelp" class="form-text">¿A qué parte del cuerpo pertenecen las medidas? Por ejemplo: torso, cintura, cadera, etc.</div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Actualizar</button>
+                <button type="submit" class="btn bg-black w-100 fw-bold lilac-text py-3 mt-5 rounded-3 mb-0 mx-auto d-block letter-spacing-1">Actualizar</button>
             </form>
 
         </div>

@@ -93,7 +93,7 @@
                     <a class="nav-link" href="index.php?seccion=contacto">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?seccion=datos-alumna">Datos de la alumna</a>
+                    <a class="nav-link" href="index.php?seccion=datos-alumna">Datos de las alumnas</a>
                 </li>
                 <li class="nav-item <?= $session ? "d-none" : "" ?>">
                     <a class="nav-link " href="index.php?seccion=login">Iniciar sesión</a>
@@ -104,7 +104,7 @@
             </ul>
             <span class="navbar-text">
                 <!-- Envíos a toda la Argentina 💗 -->
-                <a class="nav-link" href="index.php?seccion=carrito">Carrito</a>
+                <a class="nav-link fs-4" href="index.php?seccion=carrito">&#128722;</a>
             </span>
         </div>
     </div>

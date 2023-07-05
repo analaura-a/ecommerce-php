@@ -53,7 +53,7 @@ try {
         $id,
     );
 
-    // header('Location: ../index.php?seccion=admin_prendas');
+    header('Location: ../index.php?seccion=admin_prendas');
 } catch (\Exception $e) {
     die("No se pudo actualizar la prenda :(");
 }

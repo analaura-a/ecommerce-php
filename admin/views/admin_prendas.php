@@ -6,7 +6,7 @@ $prendas = (new Prenda())->catalogo_completo();
 
 <div class="table-responsive mb-5">
     <table class="table table-hover">
-        <thead>
+        <thead class="table-header">
             <tr>
                 <th scope="col">Nombre</th>
                 <th scope="col">Categoría</th>
@@ -48,7 +48,7 @@ $prendas = (new Prenda())->catalogo_completo();
 
 
                     <td>
-                        <a href="index.php?seccion=edit_prenda&id=<?= $p->getId() ?>" role="button" class="d-block btn btn-sm btn-warning mb-1" style="max-width:300px">Editar</a>
+                        <a href="index.php?seccion=edit_prenda&id=<?= $p->getId() ?>" role="button" class="d-block btn btn-sm secondary-button mb-1" style="max-width:300px">Editar</a>
                         <a href="index.php?seccion=delete_prenda&id=<?= $p->getId() ?>" role="button" class="d-block btn btn-sm btn-danger" style="max-width:300px">Eliminar</a>
                     </td>
                 </tr>
@@ -57,4 +57,4 @@ $prendas = (new Prenda())->catalogo_completo();
     </table>
 </div>
 
-<a href="index.php?seccion=add_prenda" class="btn btn-primary mt-5">Agregar nueva prenda</a>
+<a href="index.php?seccion=add_prenda" class="btn bg-black w-100 fw-bold lilac-text py-3 mt-5 rounded-3 mb-0 mx-auto d-block letter-spacing-1" style="max-width:350px">Agregar nueva prenda</a>

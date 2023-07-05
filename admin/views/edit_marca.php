@@ -5,7 +5,7 @@ $marcas = (new Marca())->get_x_id($id);
 
 <div class="row my-5">
     <div class="col">
-        <h1 class="text-center mb-5 fw-bold">Editar Marca</h1>
+        <h1 class="text-center mb-5 fw-bold">Editar marca</h1>
         <div class="row mb-5 d-flex align-items-center"></div>
         <form action="actions/edit_marca_action.php?id=<?= $marcas->getId() ?>" method="POST" enctype="multipart/form-data" class="row">
 
@@ -36,7 +36,7 @@ $marcas = (new Marca())->get_x_id($id);
                 <textarea name="historia" id="historia" cols="30" maxlength="260" rows="10" class="form-control"><?= $marcas->getHistoria() ?></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">Editar Marca</button>
+            <button type="submit" class="btn bg-black w-100 fw-bold lilac-text py-3 mt-5 rounded-3 mb-0 mx-auto d-block letter-spacing-1">Actualizar</button>
 
         </form>
     </div>

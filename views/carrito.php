@@ -4,7 +4,7 @@ $items = (new Carrito())->get_carrito();
 
 <div class="mt-5">
     <?php if (count($items)) { ?>
-        <h1 class="text-center fs-2 my-5 lilac-text">Carrito de compras</h1>
+        <h1 class="text-left fs-1 my-5 lilac-text fw-bold">Mi carrito</h1>
         <form action="admin/actions/update_items_action.php" method="POST">
 
             <div class="table-responsive">
@@ -61,13 +61,14 @@ $items = (new Carrito())->get_carrito();
             </div>
 
             <div class="d-flex justify-content-end gap-2">
-                <input type="submit" value="Actualizar Cantidades" class="btn btn-warning">
+                <input type="submit" value="Actualizar Cantidades" class="btn secondary-button">
                 <a href="admin/actions/clear_items_carrito.php" role="button" class="btn btn-danger">Vaciar Carrito</a>
-                <a href="#" role="button" class="btn btn-primary">Finalizar Compra</a>
+                <a href="#" role="button" class="btn primary-button-color">Finalizar Compra</a>
             </div>
         </form>
     <?php } else {  ?>
-        <h1 class="text-center mt-5 mb-2 lilac-text">¡Tu carrito esta vacío!</h1>
+        <h1 class="text-center fw-bold mt-5 mb-2 lilac-text">¡Tu carrito esta vacío!</h1>
         <p class="text-center fs-4">Explorá nuestra colección de prendas y llevate tus favoritas.</p>
+        <a href="index.php?seccion=catalogo-completo" class="btn bg-black w-100 fw-bold lilac-text py-3 mt-5 rounded-3 mb-0 mx-auto d-block letter-spacing-1" style="max-width:350px">Explorar</a>
     <?php } ?>
 </div>

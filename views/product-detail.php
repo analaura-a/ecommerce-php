@@ -24,6 +24,7 @@ $prenda = $catalogo->catalogo_por_id($prendaSeleccionada);
 
             <p class="mt-5"><span class="fw-bold">Color:</span> <?= $prenda->getColor(); ?></p>
             <p class="mt-1"><span class="fw-bold">Talle:</span> <?= $prenda->getTalle(); ?></p>
+            <p class="mt-1"><span class="fw-bold">Marca:</span> <?= $prenda->getMarca(); ?></p>
 
             <p class="mt-5 fw-bold fs-1"><span class="lilac-text">$ </span><?= $prenda->precio_formateado(); ?></p>
             <form action="admin/actions/add_item_carrito.php" method="GET" class="row " >

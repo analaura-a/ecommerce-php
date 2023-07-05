@@ -6,10 +6,6 @@ $catalogo = new Prenda();
 
 $categoria = $catalogo->catalogo_completo();
 
-//echo "<pre>";
-//print_r($categoria);
-//echo "</pre>";
-
 ?>
 
 <h1 class="h1 h1-catalogo mt-5">Productos más destacados</h1>

@@ -36,6 +36,7 @@ $categoria = $catalogo->catalogo_por_prenda($prendaSeleccionada);
                                     <p class="card-text"><?= $prenda->recortar_parrafo(18); ?></p>
                                     <p class="card-text"><small class="text-body-secondary">Talle: <?= $prenda->getTalle() ?></small></p>
                                     <p class="card-text"><small class="text-body-secondary">Color: <?= $prenda->getColor() ?></small></p>
+                                    <p class="card-text"><small class="text-body-secondary">Marca: <?= $prenda->getMarca() ?></small></p>
                                     <div class="fs-3 mb-3 fw-bold text-left lilac-text">$<?= $prenda->precio_formateado(); ?></div>
                                     <a href="index.php?seccion=product-detail&id=<?= $prenda->getId() ?>" class="btn bg-black w-100 fw-bold lilac-text py-2 letter-spacing-1">VER MÁS</a>
                                 </div>

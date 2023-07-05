@@ -8,9 +8,9 @@ $marca = (new Marca())->get_x_id($marcaSeleccionada);
 $catalogo = new Prenda();
 $categoria = $catalogo->catalogo_por_marca($marcaSeleccionada);
 
-echo "<pre>";
-print_r($categoria);
-echo "</pre>";
+//echo "<pre>";
+//print_r($categoria);
+//echo "</pre>";
 
 ?>
 

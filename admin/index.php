@@ -2,14 +2,12 @@
 
 require_once "../functions/autoload.php";
 
-echo "<pre>";
-print_r($_SESSION);
-echo "</pre>";
-
 (new Autenticacion())->verify();
 
-$session = isset($_SESSION['loggedIn']) ? '' : 'd-none';
-$logout = !isset($_SESSION['loggedIn']) ? '' : 'd-none';
+$identificado = $_SESSION['loggedIn'] ?? FALSE;
+if ($identificado) {
+    $usuarioPermitido = $_SESSION['loggedIn']['rol'] == 'superadmin' ?? FALSE;
+}
 
 $seccion = $_GET['seccion'] ?? "dashboard";
 $whiteList = [
@@ -68,6 +66,10 @@ if (array_key_exists($seccion, $whiteList)) {
     $titulo = $whiteList[$seccion]["titulo"];
     if ($whiteList[$seccion]['restringido']) {
         if (!isset($_SESSION['loggedIn'])) {
+            header('location: index.php?seccion=login');
+        }
+
+        if ($_SESSION['loggedIn']['rol'] == 'usuario') {
             header('location: index.php?seccion=login');
         }
     }

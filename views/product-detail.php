@@ -26,7 +26,21 @@ $prenda = $catalogo->catalogo_por_id($prendaSeleccionada);
             <p class="mt-1"><span class="fw-bold">Talle:</span> <?= $prenda->getTalle(); ?></p>
 
             <p class="mt-5 fw-bold fs-1"><span class="lilac-text">$ </span><?= $prenda->precio_formateado(); ?></p>
-            <button class="btn bg-black w-100 fw-bold lilac-text py-3 mt-5 rounded-3 mb-0 mx-auto d-block letter-spacing-1" style="max-width:500px">AGREGAR AL CARRITO</button>
+            <form action="admin/actions/add_item_carrito.php" method="GET" class="row " >
+                <div class="col-6 d-flex align-items-center">
+                    <label class="fw-bold " for="cantidad">Cantidad</label>
+                    <input type="number" value="1" name="cantidad" id="cantidad" class="form-control">
+                </div>
+                <div class="col-6">
+                <input type="submit" value="AGREGAR AL CARRITO" class="btn bg-black w-100 fw-bold lilac-text py-3 mt-5 rounded-3 mb-0 mx-auto d-block letter-spacing-1">
+                <input type="hidden" value="<?= $prenda->getId() ?>" name="id" id="id">
+
+                </div>
+               
+             
+           
+            </form>
+           
         </div>
 
     </div>

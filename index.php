@@ -2,9 +2,9 @@
 
 require_once "functions/autoload.php";
 
-echo "<pre>";
-print_r($_SESSION);
-echo "</pre>";
+//echo "<pre>";
+//print_r($_SESSION);
+//echo "</pre>";
 
 $session = $_SESSION['loggedIn'] ?? FALSE;
 

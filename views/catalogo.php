@@ -8,9 +8,9 @@ $catalogo = new Prenda();
 
 $categoria = $catalogo->catalogo_por_categoria($categoriaSeleccionada);
 
-echo "<pre>";
-print_r($categoria);
-echo "</pre>";
+//echo "<pre>";
+//print_r($categoria);
+//echo "</pre>";
 
 ?>
 

@@ -23,7 +23,17 @@ $prenda = $catalogo->catalogo_por_id($prendaSeleccionada);
             <p class="text-secondary fs-7 mt-1"><?= $prenda->getPublicacion(); ?></p>
 
             <p class="mt-5"><span class="fw-bold">Color:</span> <?= $prenda->getColor(); ?></p>
-            <p class="mt-1"><span class="fw-bold">Talle:</span> <?= $prenda->getTalle(); ?></p>
+            <p class="mt-1"><span class="fw-bold">Talles:</span> <?php $talles_secundarios = $prenda->getTalles_secundarios();
+                                                                        $talle_separado = empty($talles_secundarios) ? [] : explode(",", $talles_secundarios);
+
+                                                                        if ($talle_separado > 1) {
+                                                                            foreach ($talle_separado as $talle) {
+                                                                                echo (new Talle())->get_x_id($talle)->getTalle() . ",";
+                                                                            }
+                                                                        } else {
+                                                                            echo (new Talle())->get_x_id($talle_separado[0])->getTalle();
+                                                                        }
+                                                                        ?> </p>
             <p class="mt-1"><span class="fw-bold">Marca:</span> <?= $prenda->getMarca(); ?></p>
 
             <p class="mt-5 fw-bold fs-1"><span class="lilac-text">$ </span><?= $prenda->precio_formateado(); ?></p>

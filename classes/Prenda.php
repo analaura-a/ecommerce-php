@@ -184,7 +184,11 @@ class Prenda
     {
         $catalogo_filtrado = [];
 
-        $query = "SELECT * FROM prendas WHERE categoria = '$nombre_categoria'";
+        $query = "SELECT prendas.*, GROUP_CONCAT(prenda_x_talle.id_talle) AS talles_secundarios 
+        FROM prendas LEFT JOIN prenda_x_talle 
+        ON prenda_x_talle.id_prenda = prendas.id 
+        WHERE categoria = '$nombre_categoria'
+        GROUP BY prendas.id";
         $conexion = (new Conexion())->getConexion();
         $PDOStatement = $conexion->prepare($query);
         $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
@@ -203,7 +207,11 @@ class Prenda
     {
         $catalogo_filtrado = [];
 
-        $query = "SELECT * FROM prendas WHERE prenda = '$nombre_prenda'";
+        $query = "SELECT prendas.*, GROUP_CONCAT(prenda_x_talle.id_talle) AS talles_secundarios 
+        FROM prendas LEFT JOIN prenda_x_talle 
+        ON prenda_x_talle.id_prenda = prendas.id 
+        WHERE prenda = '$nombre_prenda'
+        GROUP BY prendas.id";
         $conexion = (new Conexion())->getConexion();
         $PDOStatement = $conexion->prepare($query);
         $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
@@ -222,7 +230,11 @@ class Prenda
     {
         $catalogo_filtrado = [];
 
-        $query = "SELECT * FROM prendas WHERE marca_id = $id";
+        $query = "SELECT prendas.*, GROUP_CONCAT(prenda_x_talle.id_talle) AS talles_secundarios 
+        FROM prendas LEFT JOIN prenda_x_talle 
+        ON prenda_x_talle.id_prenda = prendas.id 
+        WHERE marca_id = $id
+        GROUP BY prendas.id";
         $conexion = (new Conexion())->getConexion();
         $PDOStatement = $conexion->prepare($query);
         $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
@@ -240,8 +252,6 @@ class Prenda
      */
     public function catalogo_por_id(int $id)
     {
-        // $query = "SELECT * FROM prendas WHERE id = $id";
-
         $query = "SELECT prendas.*, GROUP_CONCAT(prenda_x_talle.id_talle) AS talles_secundarios 
         FROM prendas LEFT JOIN prenda_x_talle 
         ON prenda_x_talle.id_prenda = prendas.id 

@@ -34,7 +34,17 @@ $categoria = $catalogo->catalogo_por_categoria($categoriaSeleccionada);
                                     <a href="index.php?seccion=catalogo-prenda&categoria=<?= $prenda->getPrenda(); ?>" class="fs-6 m-0 fw-subtitulo text-primary link-profile"><?= $prenda->getPrenda(); ?></a>
                                     <h2 class="card-title h2-card fs-4"><?= $prenda->getNombre(); ?></h2>
                                     <p class="card-text"><?= $prenda->recortar_parrafo(18); ?></p>
-                                    <p class="card-text"><small class="text-body-secondary">Talle: <?= $prenda->getTalle() ?></small></p>
+                                    <p class="card-text"><small class="text-body-secondary">Talles: <?php $talles_secundarios = $prenda->getTalles_secundarios();
+                                                                                                    $talle_separado = empty($talles_secundarios) ? [] : explode(",", $talles_secundarios);
+
+                                                                                                    if ($talle_separado > 1) {
+                                                                                                        foreach ($talle_separado as $talle) {
+                                                                                                            echo (new Talle())->get_x_id($talle)->getTalle() . ",";
+                                                                                                        }
+                                                                                                    } else {
+                                                                                                        echo (new Talle())->get_x_id($talle_separado[0])->getTalle();
+                                                                                                    }
+                                                                                                    ?> </small></p>
                                     <p class="card-text"><small class="text-body-secondary">Color: <?= $prenda->getColor() ?></small></p>
                                     <p class="card-text"><small class="text-body-secondary">Marca: <?= $prenda->getMarca() ?></small></p>
                                     <div class="fs-3 mb-3 fw-bold text-left lilac-text">$<?= $prenda->precio_formateado(); ?></div>

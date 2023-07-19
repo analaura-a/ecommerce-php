@@ -13,5 +13,5 @@
             <a href="index.php?seccion=contacto" class="nav-link px-2 text-body-secondary">Contacto</a>
         </li>
     </ul>
-    <p class="text-center text-body-secondary">© 2023 LILAC | Made with 💗 by Ana Laura Almirón</p>
+    <p class="text-center text-body-secondary">© 2023 LILAC | Made with 💗 by Ana Laura Almirón & Brisa Marca.</p>
 </footer>

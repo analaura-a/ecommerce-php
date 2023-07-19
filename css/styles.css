@@ -457,10 +457,19 @@ ul {
     border-radius: 6px;
 }
 
+.dahsboard-shortcuts>li:last-child {
+    background-color: black;
+
+}
+
 .dahsboard-shortcuts>li>a {
     font-size: 1.2rem;
     font-weight: 600;
     color: #171718;
+}
+
+.dahsboard-shortcuts>li:last-child a{
+    color: var(--lilac);
 }
 
 @media (min-width: 992px) {

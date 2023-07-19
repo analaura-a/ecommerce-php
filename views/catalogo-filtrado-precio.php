@@ -2,44 +2,21 @@
 
 require_once "classes/Prenda.php";
 
-$talles = (new Talle())->lista_completa();
+$valorFiltro = isset($_GET['value']) ? $_GET['value'] : false;
+
 $catalogo = new Prenda();
-$categoria = $catalogo->catalogo_completo();
+$categoria = $catalogo->catalogo_x_rango_precio($valorFiltro);
 
 ?>
 
 <h1 class="h1 h1-catalogo mt-5">Productos más destacados</h1>
 <p class="mb-4 h1-catalogo fs-5">Descubrí los mejores looks y prendas de Lilac.</p>
 
-<!-- "index.php?seccion=catalogo&categoria=verano-2023" -->
-
-<p class="fw-bold mb-1">Color</p>
-<ul class="filters">
-    <li><a href="index.php?seccion=catalogo-filtrado-color&value=Rosa" class="nav-link">Rosa</a></li>
-    <li><a href="index.php?seccion=catalogo-filtrado-color&value=Beige" class="nav-link">Beige</a></li>
-    <li><a href="index.php?seccion=catalogo-filtrado-color&value=Blanco" class="nav-link">Blanco</a></li>
-    <li><a href="index.php?seccion=catalogo-filtrado-color&value=Negro" class="nav-link">Negro</a></li>
-    <li><a href="index.php?seccion=catalogo-filtrado-color&value=Azul" class="nav-link">Azul</a></li>
-    <li><a href="index.php?seccion=catalogo-filtrado-color&value=Celeste" class="nav-link">Celeste</a></li>
-    <li><a href="index.php?seccion=catalogo-filtrado-color&value=Lila" class="nav-link">Lila</a></li>
-    <li><a href="index.php?seccion=catalogo-filtrado-color&value=Verde" class="nav-link">Verde</a></li>
-    <li><a href="index.php?seccion=catalogo-filtrado-color&value=Marrón" class="nav-link">Marrón</a></li>
-</ul>
-
-<p class="fw-bold mb-1">Talle</p>
-<ul class="filters">
-    <?php foreach ($talles as $t) { ?>
-        <li> <a href="index.php?seccion=catalogo-filtrado&tipo=Talle&value=<?= $t->getTalle(); ?>" class="nav-link"><?= $t->getTalle(); ?></a></li>
-    <?PHP } ?>
-</ul>
-
-<p class="fw-bold mb-1">Rango de precio</p>
-<ul class="filters mb-5">
-    <li><a href="index.php?seccion=catalogo-filtrado-precio&value=0-3000" class="nav-link">$0 - $3.000</a></li>
-    <li><a href="index.php?seccion=catalogo-filtrado-precio&value=3000-10000" class="nav-link">$3.000 - $10.000</a></li>
-    <li><a href="index.php?seccion=catalogo-filtrado-precio&value=10000-20000" class="nav-link">$10.000 - $20.000</a></li>
-    <li><a href="index.php?seccion=catalogo-filtrado-precio&value=20000-999999" class="nav-link">+$20.000</a></li>
-</ul>
+<p class="mb-4"><span class="fw-bold">Filtrando por:</span> Rango de precio <?php if ($valorFiltro == '20000-999999') {
+                                                                                echo "+$20.000";
+                                                                            } else {
+                                                                                echo $valorFiltro;
+                                                                            } ?>.</p>
 
 <div class="contenedor-productos container-fluid">
 
@@ -82,7 +59,7 @@ $categoria = $catalogo->catalogo_completo();
 
             <?PHP }
         } else { ?>
-            <h2 class="text-center mt-3">No hay prendas disponibles para esa categoría.</h2>
+            <h2 class="text-center mt-5">No hay prendas disponibles para esa búsqueda.</h2>
         <?PHP } ?>
     </div>
 

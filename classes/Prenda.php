@@ -246,6 +246,63 @@ class Prenda
         return $catalogo_filtrado;
     }
 
+
+
+
+    /**
+     * Devuelve el catálogo completo filtrado a partir de un color en particular
+     * @param string $valor valor seleccionado por el usuario (color)
+     */
+    public function catalogo_x_color(string $valor): array
+    {
+        $catalogo_filtrado = [];
+
+        $query = "SELECT prendas.*, GROUP_CONCAT(prenda_x_talle.id_talle) AS talles_secundarios 
+        FROM prendas LEFT JOIN prenda_x_talle 
+        ON prenda_x_talle.id_prenda = prendas.id 
+        WHERE Color = '$valor'
+        GROUP BY prendas.id";
+        $conexion = (new Conexion())->getConexion();
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
+        $PDOStatement->execute();
+
+        $catalogo_filtrado = $PDOStatement->fetchAll();
+
+
+        return $catalogo_filtrado;
+    }
+
+    /**
+     * Devuelve el catálogo completo filtrado a partir de un rango de precios en particular
+     * @param string $valor valor seleccionado por el usuario (rango de precio)
+     */
+    public function catalogo_x_rango_precio(string $valor): array
+    {
+        $array = explode("-", $valor);
+
+        $catalogo_filtrado = [];
+
+        $query = "SELECT prendas.*, GROUP_CONCAT(prenda_x_talle.id_talle) AS talles_secundarios 
+        FROM prendas LEFT JOIN prenda_x_talle 
+        ON prenda_x_talle.id_prenda = prendas.id 
+        WHERE Precio BETWEEN $array[0] AND $array[1]
+        GROUP BY prendas.id";
+        $conexion = (new Conexion())->getConexion();
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
+        $PDOStatement->execute();
+
+        $catalogo_filtrado = $PDOStatement->fetchAll();
+
+
+        return $catalogo_filtrado;
+    }
+
+
+
+
+
     /**
      * Devuelve el detalle de una prenda en particular
      * @param int $id id del producto en particular

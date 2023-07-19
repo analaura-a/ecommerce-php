@@ -28,6 +28,12 @@ $whiteList = [
     "catalogo-marca" => [
         "titulo" => "Catálogo | Marcas"
     ],
+    "catalogo-filtrado-color" => [
+        "titulo" => "Catálogo | Filtrando por color"
+    ],
+    "catalogo-filtrado-precio" => [
+        "titulo" => "Catálogo | Filtrando por rango de precio"
+    ],
     "product-detail" => [
         "titulo" => "Detalle de la prenda"
     ],

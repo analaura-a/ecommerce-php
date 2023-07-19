@@ -59,19 +59,9 @@ $talles = (new Talle())->lista_completa();
             <input type="text" class="form-control" id="color" name="color" value="<?= $prenda->getColor() ?>">
         </div>
 
-        <div class="mb-3 col-6">
-            <label for="talles" class="form-label">Talle</label>
-            <select class="form-select" name="talle_id" id="talles">
-                <option value="" selected disabled>Elegí una opción</option>
-                <?php foreach ($talles as $t) {  ?>
-                    <option value="<?= $t->getId() ?>" <?= $t->getId() == $prenda->getTalle_id() ? "selected" : "" ?>><?= $t->getTalle() ?> (<?= $t->getCentimetros() ?>cm — <?= $t->getTipo() ?>)</option>
-                <?php } ?>
-
-            </select>
-        </div>
 
         <div class="col-6">
-            <label class="form-label d-block">Otros talles disponibles</label>
+            <label class="form-label d-block">Talles disponibles</label>
             <?PHP foreach ($talles as $t) {
                 $ts_selected = $prenda->getTalles_secundarios_ids(); ?>
                 <div class="form-check form-check-inline">

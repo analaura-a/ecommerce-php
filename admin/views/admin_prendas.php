@@ -12,8 +12,7 @@ $prendas = (new Prenda())->catalogo_completo();
                 <th scope="col">Categoría</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Color</th>
-                <th scope="col">Talle</th>
-                <th scope="col">Otros talles</th>
+                <th scope="col">Talles</th>
                 <th scope="col">Descripción</th>
                 <th scope="col">Publicación</th>
                 <th scope="col">Marca</th>
@@ -29,7 +28,6 @@ $prendas = (new Prenda())->catalogo_completo();
                     <td><?= $p->getCategoria() ?></td>
                     <td><?= $p->precio_formateado() ?></td>
                     <td><?= $p->getColor() ?></td>
-                    <td><?= $p->getTalle() ?></td>
                     <td><?php $talles_secundarios = $p->getTalles_secundarios();
                         $talle_separado = empty($talles_secundarios) ? [] : explode(",", $talles_secundarios);
 

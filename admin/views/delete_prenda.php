@@ -21,9 +21,7 @@ $prenda = (new Prenda())->catalogo_por_id($id);
         <p class="mb-3"><?= $prenda->precio_formateado() ?></p>
         <h2 class="fs-6 fw-bold">Color.</h2>
         <p class="mb-3"><?= $prenda->getColor()?></p>
-        <h2 class="fs-6 fw-bold">Talle.</h2>
-        <p class="mb-3"><?= $prenda->getTalle() ?></p>
-        <h2 class="fs-6 fw-bold">Otros talles:</h2>
+        <h2 class="fs-6 fw-bold">Talles:</h2>
         <p class="mb-3"><?php $talles_secundarios = $prenda->getTalles_secundarios();
                         $talle_separado = empty($talles_secundarios) ? [] : explode(",", $talles_secundarios);
 

@@ -46,7 +46,6 @@ try {
         $prenda['prenda'],
         $prenda['precio'],
         $prenda['color'],
-        $prenda['talle_id'],
         $prenda['descripcion'],
         $prenda['publicacion'],
         $prenda['marca_id'],

@@ -273,16 +273,15 @@ class Prenda
      * @param string $prenda tipo de prenda
      * @param int $precio
      * @param string $color
-     * @param int $talle_id id del talle que tiene la prenda
      * @param string $descripcion 
      * @param string $imagen 
      * @param string $publicacion fecha de publicación
      * @param int $marca_id id de la marca que tiene la prenda
      */
-    public function insert($nombre, $categoria, $prenda, $precio, $color, $talle_id, $descripcion, $imagen, $publicacion, $marca_id): int
+    public function insert($nombre, $categoria, $prenda, $precio, $color, $descripcion, $imagen, $publicacion, $marca_id): int
     {
         $conexion = (new Conexion())->getConexion();
-        $query = "INSERT INTO prendas VALUES(NULL, :nombre, :categoria, :prenda, :precio, :color, :talle_id, :descripcion, :imagen, :publicacion, :marca_id)";
+        $query = "INSERT INTO prendas VALUES(NULL, :nombre, :categoria, :prenda, :precio, :color, :descripcion, :imagen, :publicacion, :marca_id)";
         $PDOStatement = $conexion->prepare($query);
         $PDOStatement->execute([
             'nombre' => $nombre,
@@ -290,7 +289,6 @@ class Prenda
             'prenda' => $prenda,
             'precio' => $precio,
             'color' => $color,
-            'talle_id' => $talle_id,
             'descripcion' => $descripcion,
             'imagen' => $imagen,
             'publicacion' => $publicacion,
@@ -306,16 +304,15 @@ class Prenda
      * @param string $prenda tipo de prenda
      * @param int $precio
      * @param string $color
-     * @param int $talle_id id del talle que tiene la prenda
      * @param string $descripcion 
      * @param string $publicacion fecha de publicación
      * @param int $marca_id id de la marca que tiene la prenda
      * @param int $id id del producto a editar
      */
-    public function edit($nombre, $categoria, $prenda, $precio, $color, $talle_id, $descripcion, $publicacion, $marca_id, $id)
+    public function edit($nombre, $categoria, $prenda, $precio, $color, $descripcion, $publicacion, $marca_id, $id)
     {
         $conexion = (new Conexion())->getConexion();
-        $query = "UPDATE prendas SET nombre = :nombre, categoria = :categoria, prenda = :prenda, precio = :precio, color = :color, talle_id = :talle_id, descripcion = :descripcion, publicacion = :publicacion, marca_id = :marca_id WHERE prendas.id = :id";
+        $query = "UPDATE prendas SET nombre = :nombre, categoria = :categoria, prenda = :prenda, precio = :precio, color = :color, descripcion = :descripcion, publicacion = :publicacion, marca_id = :marca_id WHERE prendas.id = :id";
 
         $PDOStatement = $conexion->prepare($query);
         $PDOStatement->execute([
@@ -324,7 +321,6 @@ class Prenda
             'prenda' => $prenda,
             'precio' => $precio,
             'color' => $color,
-            'talle_id' => $talle_id,
             'descripcion' => $descripcion,
             'publicacion' => $publicacion,
             'marca_id' => $marca_id,

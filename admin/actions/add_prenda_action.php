@@ -13,7 +13,6 @@ try {
         $prenda['prenda'],
         $prenda['precio'],
         $prenda['color'],
-        $prenda['talle_id'],
         $prenda['descripcion'],
         $imagen,
         $prenda['publicacion'],

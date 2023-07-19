@@ -58,18 +58,10 @@ $talles = (new Talle())->lista_completa();
             <input type="text" class="form-control" id="color" name="color" required>
         </div>
 
-        <div class="mb-3 col-6">
-            <label for="talles" class="form-label">Talle principal</label>
-            <select class="form-select" name="talle_id" id="talles" required>
-                <option value="" selected disabled>Elegí una opción</option>
-                <?php foreach ($talles as $t) {  ?>
-                    <option value="<?= $t->getId() ?>"><?= $t->getTalle() ?> — <?= $t->getCentimetros() ?>cm — <?= $t->getTipo() ?></option>
-                <?php } ?>
-            </select>
-        </div>
+    
 
         <div class="col-6">
-            <label class="form-label d-block">Otros talles disponibles</label>
+            <label class="form-label d-block">Talles disponibles</label>
             <?PHP foreach ($talles as $t) {    ?>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" name="talles_secundarios[]" id="talles_secundarios_<?= $t->getId() ?>" value="<?= $t->getId() ?>">

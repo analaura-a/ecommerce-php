@@ -11,8 +11,6 @@ $categoria = $catalogo->catalogo_completo();
 <h1 class="h1 h1-catalogo mt-5">Productos más destacados</h1>
 <p class="mb-4 h1-catalogo fs-5">Descubrí los mejores looks y prendas de Lilac.</p>
 
-<!-- "index.php?seccion=catalogo&categoria=verano-2023" -->
-
 <p class="fw-bold mb-1">Color</p>
 <ul class="filters">
     <li><a href="index.php?seccion=catalogo-filtrado-color&value=Rosa" class="nav-link">Rosa</a></li>

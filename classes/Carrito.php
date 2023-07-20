@@ -12,7 +12,7 @@ class Carrito
             $_SESSION["carrito"][$prendaID] = [
                 "Producto" => $item->getNombre(),
                 "imagen"  => $item->getImagen(),
-                "Talle" => $item->getTalle(),
+                "Talle" => $item->getTalles_secundarios(),
                 "Color" => $item->getColor(),
                 "Precio" => $item->getPrecio(),
                 "Cantidad" => $cantidad

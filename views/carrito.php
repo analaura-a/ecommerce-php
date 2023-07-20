@@ -12,7 +12,7 @@ $items = (new Carrito())->get_carrito();
                     <thead>
                         <tr>
                             <th scope="col" width="20%">Prenda</th>
-                            <th scope="col">Talle</th>
+                            <th scope="col">Talles</th>
                             <th scope="col">Color</th>
                             <th scope="col">Cantidad</th>
                             <th scope="col">Precio</th>

@@ -34,6 +34,9 @@ $whiteList = [
     "catalogo-filtrado-precio" => [
         "titulo" => "Catálogo | Filtrando por rango de precio"
     ],
+    "catalogo-filtrado-talle" => [
+        "titulo" => "Catálogo | Filtrando por talle"
+    ],
     "product-detail" => [
         "titulo" => "Detalle de la prenda"
     ],

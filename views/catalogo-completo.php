@@ -29,7 +29,7 @@ $categoria = $catalogo->catalogo_completo();
 <p class="fw-bold mb-1">Talle</p>
 <ul class="filters">
     <?php foreach ($talles as $t) { ?>
-        <li> <a href="index.php?seccion=catalogo-filtrado&tipo=Talle&value=<?= $t->getTalle(); ?>" class="nav-link"><?= $t->getTalle(); ?></a></li>
+        <li> <a href="index.php?seccion=catalogo-filtrado-talle&value=<?= $t->getId(); ?>" class="nav-link"><?= $t->getTalle(); ?></a></li>
     <?PHP } ?>
 </ul>
 

@@ -287,7 +287,8 @@ class Prenda
         FROM prendas LEFT JOIN prenda_x_talle 
         ON prenda_x_talle.id_prenda = prendas.id 
         WHERE Precio BETWEEN $array[0] AND $array[1]
-        GROUP BY prendas.id";
+        GROUP BY prendas.id 
+        ORDER BY Precio ASC";
         $conexion = (new Conexion())->getConexion();
         $PDOStatement = $conexion->prepare($query);
         $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
@@ -295,6 +296,30 @@ class Prenda
 
         $catalogo_filtrado = $PDOStatement->fetchAll();
 
+
+        return $catalogo_filtrado;
+    }
+
+
+    /**
+     * Devuelve el catálogo completo filtrado a partir de un talle en particular
+     * @param string $valor valor seleccionado por el usuario (talle)
+     */
+    public function catalogo_x_talle(string $valor): array
+    {
+        $catalogo_filtrado = [];
+
+        $query = "SELECT prendas.*, GROUP_CONCAT(prenda_x_talle.id_talle) AS talles_secundarios 
+        FROM prendas LEFT JOIN prenda_x_talle  
+        ON prenda_x_talle.id_prenda = prendas.id  
+        WHERE prenda_x_talle.id_talle = $valor 
+        GROUP BY prendas.id";
+        $conexion = (new Conexion())->getConexion();
+        $PDOStatement = $conexion->prepare($query);
+        $PDOStatement->setFetchMode(PDO::FETCH_CLASS, self::class);
+        $PDOStatement->execute();
+
+        $catalogo_filtrado = $PDOStatement->fetchAll();
 
         return $catalogo_filtrado;
     }

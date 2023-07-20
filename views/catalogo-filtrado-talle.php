@@ -5,18 +5,16 @@ require_once "classes/Prenda.php";
 $valorFiltro = isset($_GET['value']) ? $_GET['value'] : false;
 
 $catalogo = new Prenda();
-$categoria = $catalogo->catalogo_x_rango_precio($valorFiltro);
+$categoria = $catalogo->catalogo_x_talle($valorFiltro);
+
+$talleElegido = (new Talle())->get_x_id($valorFiltro);
 
 ?>
 
 <h1 class="h1 h1-catalogo mt-5">Productos más destacados</h1>
 <p class="mb-4 h1-catalogo fs-5">Descubrí los mejores looks y prendas de Lilac.</p>
 
-<p class="mb-4"><span class="fw-bold">Filtrando por:</span> Rango de precio (<?php if ($valorFiltro == '20000-999999') {
-                                                                                echo "+$20.000";
-                                                                            } else {
-                                                                                echo $valorFiltro;
-                                                                            } ?>).</p>
+<p class="mb-4"><span class="fw-bold">Filtrando por:</span> Talle <?= ($talleElegido)->getTalle(); ?>.</p>
 
 <div class="contenedor-productos container-fluid">
 
@@ -36,7 +34,7 @@ $categoria = $catalogo->catalogo_x_rango_precio($valorFiltro);
                                     <a href="index.php?seccion=catalogo-prenda&categoria=<?= $prenda->getPrenda(); ?>" class="fs-6 m-0 fw-subtitulo text-primary link-profile"><?= $prenda->getPrenda(); ?></a>
                                     <h2 class="card-title h2-card fs-4"><?= $prenda->getNombre(); ?></h2>
                                     <p class="card-text"><?= $prenda->recortar_parrafo(18); ?></p>
-                                    <p class="card-text"><small class="text-body-secondary">Talles: <?php $talles_secundarios = $prenda->getTalles_secundarios();
+                                    <p class="card-text"><small class="text-body-secondary">Talle: <?php $talles_secundarios = $prenda->getTalles_secundarios();
                                                                                                     $talle_separado = empty($talles_secundarios) ? [] : explode(",", $talles_secundarios);
 
                                                                                                     if ($talle_separado > 1) {

@@ -9,7 +9,6 @@ class Prenda
     protected $prenda;
     protected $precio;
     protected $color;
-    protected $talle_id;
     protected $descripcion;
     protected $imagen;
     protected $publicacion;
@@ -66,24 +65,6 @@ class Prenda
     public function getColor()
     {
         return $this->color;
-    }
-
-    /**
-     * Getter del talle
-     */
-    public function getTalle()
-    {
-        $talle = (new Talle())->get_x_id($this->talle_id);
-        $valor_talle = $talle->getTalle();
-        return $valor_talle;
-    }
-
-    /**
-     * Get the value of talle_id
-     */
-    public function getTalle_id()
-    {
-        return $this->talle_id;
     }
 
     /**
